@@ -1,0 +1,11 @@
+moveit_setup_assistant_config:
+  URDF:
+    package: mutifingerhand_qi_urdf
+    relative_path: urdf/mutifingerhand_qi_urdf.urdf
+    xacro_args: ""
+  SRDF:
+    relative_path: config/mutifingerhand.srdf
+  CONFIG:
+    author_name: Qi
+    author_email: qi.shield95@foxmail.com
+    generated_timestamp: 1597649765

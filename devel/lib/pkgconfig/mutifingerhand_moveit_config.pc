@@ -1,0 +1,8 @@
+prefix=/home/qi/ws_MutiFingerHand/devel
+
+Name: mutifingerhand_moveit_config
+Description: Description of mutifingerhand_moveit_config
+Version: 0.3.0
+Cflags: 
+Libs: -L${prefix}/lib 
+Requires: 

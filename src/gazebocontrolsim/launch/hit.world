@@ -1,0 +1,1830 @@
+<sdf version='1.6'>
+  <world name='default'>
+    <light name='sun' type='directional'>
+      <cast_shadows>1</cast_shadows>
+      <pose frame=''>0 0 10 0 -0 0</pose>
+      <diffuse>0.8 0.8 0.8 1</diffuse>
+      <specular>0.2 0.2 0.2 1</specular>
+      <attenuation>
+        <range>1000</range>
+        <constant>0.9</constant>
+        <linear>0.01</linear>
+        <quadratic>0.001</quadratic>
+      </attenuation>
+      <direction>-0.5 0.1 -0.9</direction>
+    </light>
+    <model name='ground_plane'>
+      <static>1</static>
+      <link name='link'>
+        <collision name='collision'>
+          <geometry>
+            <plane>
+              <normal>0 0 1</normal>
+              <size>100 100</size>
+            </plane>
+          </geometry>
+          <surface>
+            <contact>
+              <collide_bitmask>65535</collide_bitmask>
+              <ode/>
+            </contact>
+            <friction>
+              <ode>
+                <mu>100</mu>
+                <mu2>50</mu2>
+              </ode>
+              <torsional>
+                <ode/>
+              </torsional>
+            </friction>
+            <bounce/>
+          </surface>
+          <max_contacts>10</max_contacts>
+        </collision>
+        <visual name='visual'>
+          <cast_shadows>0</cast_shadows>
+          <geometry>
+            <plane>
+              <normal>0 0 1</normal>
+              <size>100 100</size>
+            </plane>
+          </geometry>
+          <material>
+            <script>
+              <uri>file://media/materials/scripts/gazebo.material</uri>
+              <name>Gazebo/Grey</name>
+            </script>
+          </material>
+        </visual>
+        <self_collide>0</self_collide>
+        <enable_wind>0</enable_wind>
+        <kinematic>0</kinematic>
+      </link>
+    </model>
+    <gravity>0 0 -9.8</gravity>
+    <magnetic_field>6e-06 2.3e-05 -4.2e-05</magnetic_field>
+    <atmosphere type='adiabatic'/>
+    <physics name='default_physics' default='0' type='ode'>
+      <max_step_size>0.001</max_step_size>
+      <real_time_factor>1</real_time_factor>
+      <real_time_update_rate>1000</real_time_update_rate>
+    </physics>
+    <scene>
+      <ambient>0.4 0.4 0.4 1</ambient>
+      <background>0.7 0.7 0.7 1</background>
+      <shadows>1</shadows>
+    </scene>
+    <audio>
+      <device>default</device>
+    </audio>
+    <wind/>
+    <spherical_coordinates>
+      <surface_model>EARTH_WGS84</surface_model>
+      <latitude_deg>0</latitude_deg>
+      <longitude_deg>0</longitude_deg>
+      <elevation>0</elevation>
+      <heading_deg>0</heading_deg>
+    </spherical_coordinates>
+    <model name='mutifingerhand'>
+      <link name='Plam'>
+        <pose frame=''>0 0 0.2 0 -0 0</pose>
+        <inertial>
+          <pose frame=''>0 0 0 0 -0 0</pose>
+          <mass>1.74091</mass>
+          <inertia>
+            <ixx>0.0177421</ixx>
+            <ixy>-0.00221485</ixy>
+            <ixz>0.000357467</ixz>
+            <iyy>0.0151846</iyy>
+            <iyz>0.000619151</iyz>
+            <izz>0.00547612</izz>
+          </inertia>
+        </inertial>
+        <collision name='Plam_collision'>
+          <pose frame=''>0 0 0 0 -0 0</pose>
+          <geometry>
+            <mesh>
+              <scale>1 1 1</scale>
+              <uri>/home/qi/ws_MutiFingerHand/src/mutifingerhand_qi_urdf/meshes/Plam.STL</uri>
+            </mesh>
+          </geometry>
+          <max_contacts>10</max_contacts>
+          <surface>
+            <contact>
+              <ode/>
+            </contact>
+            <bounce/>
+            <friction>
+              <torsional>
+                <ode/>
+              </torsional>
+              <ode/>
+            </friction>
+          </surface>
+        </collision>
+        <visual name='Plam_visual'>
+          <pose frame=''>0 0 0 0 -0 0</pose>
+          <geometry>
+            <mesh>
+              <scale>1 1 1</scale>
+              <uri>/home/qi/ws_MutiFingerHand/src/mutifingerhand_qi_urdf/meshes/Plam.STL</uri>
+            </mesh>
+          </geometry>
+        </visual>
+        <self_collide>0</self_collide>
+        <enable_wind>0</enable_wind>
+        <kinematic>0</kinematic>
+      </link>
+      <joint name='fixed' type='fixed'>
+        <child>Plam</child>
+        <parent>world</parent>
+      </joint>
+      <link name='L11'>
+        <pose frame=''>0 0 0.2 0 -0 0</pose>
+        <inertial>
+          <pose frame=''>0.045615 -0 -0.026915 0 -0 0</pose>
+          <mass>0.0254985</mass>
+          <inertia>
+            <ixx>3.40991e-06</ixx>
+            <ixy>-1.48231e-21</ixy>
+            <ixz>-2.77199e-06</ixz>
+            <iyy>1.78537e-05</iyy>
+            <iyz>-4.65009e-22</iyz>
+            <izz>1.85525e-05</izz>
+          </inertia>
+        </inertial>
+        <collision name='L11_collision'>
+          <pose frame=''>0 0 0 0 -0 0</pose>
+          <geometry>
+            <mesh>
+              <scale>1 1 1</scale>
+              <uri>/home/qi/ws_MutiFingerHand/src/mutifingerhand_qi_urdf/meshes/L11.STL</uri>
+            </mesh>
+          </geometry>
+          <max_contacts>10</max_contacts>
+          <surface>
+            <contact>
+              <ode/>
+            </contact>
+            <bounce/>
+            <friction>
+              <torsional>
+                <ode/>
+              </torsional>
+              <ode/>
+            </friction>
+          </surface>
+        </collision>
+        <visual name='L11_visual'>
+          <pose frame=''>0 0 0 0 -0 0</pose>
+          <geometry>
+            <mesh>
+              <scale>1 1 1</scale>
+              <uri>/home/qi/ws_MutiFingerHand/src/mutifingerhand_qi_urdf/meshes/L11.STL</uri>
+            </mesh>
+          </geometry>
+        </visual>
+        <self_collide>0</self_collide>
+        <enable_wind>0</enable_wind>
+        <kinematic>0</kinematic>
+      </link>
+      <joint name='J11' type='revolute'>
+        <child>L11</child>
+        <parent>Plam</parent>
+        <axis>
+          <xyz>0 0 1</xyz>
+          <limit>
+            <lower>-1.5</lower>
+            <upper>0.4</upper>
+            <effort>10</effort>
+            <velocity>0.2</velocity>
+          </limit>
+          <dynamics>
+            <spring_reference>0</spring_reference>
+            <spring_stiffness>0</spring_stiffness>
+          </dynamics>
+          <use_parent_model_frame>1</use_parent_model_frame>
+        </axis>
+      </joint>
+      <link name='L12'>
+        <pose frame=''>0.07 0 0.2 -1.57079 -1.57079 3.14159</pose>
+        <inertial>
+          <pose frame=''>0 0 0 0 -0 0</pose>
+          <mass>0.00533033</mass>
+          <inertia>
+            <ixx>3.90144e-07</ixx>
+            <ixy>1.02097e-11</ixy>
+            <ixz>-1.02097e-11</ixz>
+            <iyy>4.31614e-07</iyy>
+            <iyz>1.1279e-16</iyz>
+            <izz>4.31614e-07</izz>
+          </inertia>
+        </inertial>
+        <collision name='L12_collision'>
+          <pose frame=''>0 0 0 0 -0 0</pose>
+          <geometry>
+            <mesh>
+              <scale>1 1 1</scale>
+              <uri>/home/qi/ws_MutiFingerHand/src/mutifingerhand_qi_urdf/meshes/L12.STL</uri>
+            </mesh>
+          </geometry>
+          <max_contacts>10</max_contacts>
+          <surface>
+            <contact>
+              <ode/>
+            </contact>
+            <bounce/>
+            <friction>
+              <torsional>
+                <ode/>
+              </torsional>
+              <ode/>
+            </friction>
+          </surface>
+        </collision>
+        <visual name='L12_visual'>
+          <pose frame=''>0 0 0 0 -0 0</pose>
+          <geometry>
+            <mesh>
+              <scale>1 1 1</scale>
+              <uri>/home/qi/ws_MutiFingerHand/src/mutifingerhand_qi_urdf/meshes/L12.STL</uri>
+            </mesh>
+          </geometry>
+        </visual>
+        <self_collide>0</self_collide>
+        <enable_wind>0</enable_wind>
+        <kinematic>0</kinematic>
+      </link>
+      <joint name='J12' type='revolute'>
+        <child>L12</child>
+        <parent>L11</parent>
+        <axis>
+          <xyz>0 -1 -0</xyz>
+          <limit>
+            <lower>0</lower>
+            <upper>1.5708</upper>
+            <effort>10</effort>
+            <velocity>0.2</velocity>
+          </limit>
+          <dynamics>
+            <spring_reference>0</spring_reference>
+            <spring_stiffness>0</spring_stiffness>
+          </dynamics>
+          <use_parent_model_frame>1</use_parent_model_frame>
+        </axis>
+      </joint>
+      <link name='L13'>
+        <pose frame=''>0.07 0 0.2 3.14159 -1.57079 3.14159</pose>
+        <inertial>
+          <pose frame=''>0.025739 -0 0 0 -0 0</pose>
+          <mass>0.021339</mass>
+          <inertia>
+            <ixx>3.1394e-06</ixx>
+            <ixy>-6.7982e-23</ixy>
+            <ixz>-2.3507e-22</ixz>
+            <iyy>3.2439e-06</iyy>
+            <iyz>8.4703e-22</iyz>
+            <izz>3.3284e-06</izz>
+          </inertia>
+        </inertial>
+        <collision name='L13_collision'>
+          <pose frame=''>0 0 0 0 -0 0</pose>
+          <geometry>
+            <mesh>
+              <scale>1 1 1</scale>
+              <uri>/home/qi/ws_MutiFingerHand/src/mutifingerhand_qi_urdf/meshes/L13.STL</uri>
+            </mesh>
+          </geometry>
+          <max_contacts>10</max_contacts>
+          <surface>
+            <contact>
+              <ode/>
+            </contact>
+            <bounce/>
+            <friction>
+              <torsional>
+                <ode/>
+              </torsional>
+              <ode/>
+            </friction>
+          </surface>
+        </collision>
+        <visual name='L13_visual'>
+          <pose frame=''>0 0 0 0 -0 0</pose>
+          <geometry>
+            <mesh>
+              <scale>1 1 1</scale>
+              <uri>/home/qi/ws_MutiFingerHand/src/mutifingerhand_qi_urdf/meshes/L13.STL</uri>
+            </mesh>
+          </geometry>
+        </visual>
+        <self_collide>0</self_collide>
+        <enable_wind>0</enable_wind>
+        <kinematic>0</kinematic>
+      </link>
+      <joint name='J13' type='revolute'>
+        <child>L13</child>
+        <parent>L12</parent>
+        <axis>
+          <xyz>-1 4e-06 -0</xyz>
+          <limit>
+            <lower>-0.349066</lower>
+            <upper>0.349066</upper>
+            <effort>10</effort>
+            <velocity>0.2</velocity>
+          </limit>
+          <dynamics>
+            <spring_reference>0</spring_reference>
+            <spring_stiffness>0</spring_stiffness>
+          </dynamics>
+          <use_parent_model_frame>1</use_parent_model_frame>
+        </axis>
+      </joint>
+      <link name='L14'>
+        <pose frame=''>0.07 0 0.25 -1.5708 -1.57079 -3.14159</pose>
+        <inertial>
+          <pose frame=''>0.03 0 0 0 -0 0</pose>
+          <mass>0.0432978</mass>
+          <inertia>
+            <ixx>6.10361e-06</ixx>
+            <ixy>3.40544e-22</ixy>
+            <ixz>-2.68196e-21</ixz>
+            <iyy>1.24187e-05</iyy>
+            <iyz>1.27055e-21</iyz>
+            <izz>1.27607e-05</izz>
+          </inertia>
+        </inertial>
+        <collision name='L14_collision'>
+          <pose frame=''>0 0 0 0 -0 0</pose>
+          <geometry>
+            <mesh>
+              <scale>1 1 1</scale>
+              <uri>/home/qi/ws_MutiFingerHand/src/mutifingerhand_qi_urdf/meshes/L14.STL</uri>
+            </mesh>
+          </geometry>
+          <max_contacts>10</max_contacts>
+          <surface>
+            <contact>
+              <ode/>
+            </contact>
+            <bounce/>
+            <friction>
+              <torsional>
+                <ode/>
+              </torsional>
+              <ode/>
+            </friction>
+          </surface>
+        </collision>
+        <visual name='L14_visual'>
+          <pose frame=''>0 0 0 0 -0 0</pose>
+          <geometry>
+            <mesh>
+              <scale>1 1 1</scale>
+              <uri>/home/qi/ws_MutiFingerHand/src/mutifingerhand_qi_urdf/meshes/L14.STL</uri>
+            </mesh>
+          </geometry>
+        </visual>
+        <self_collide>0</self_collide>
+        <enable_wind>0</enable_wind>
+        <kinematic>0</kinematic>
+      </link>
+      <joint name='J14' type='revolute'>
+        <child>L14</child>
+        <parent>L13</parent>
+        <axis>
+          <xyz>-4e-06 -1 0</xyz>
+          <limit>
+            <lower>0</lower>
+            <upper>1.5708</upper>
+            <effort>10</effort>
+            <velocity>0.2</velocity>
+          </limit>
+          <dynamics>
+            <spring_reference>0</spring_reference>
+            <spring_stiffness>0</spring_stiffness>
+          </dynamics>
+          <use_parent_model_frame>1</use_parent_model_frame>
+        </axis>
+      </joint>
+      <link name='L15'>
+        <pose frame=''>0.07 0 0.31 -1.5708 -1.57079 -3.14159</pose>
+        <inertial>
+          <pose frame=''>0.029429 0 0 0 -0 0</pose>
+          <mass>0.0306024</mass>
+          <inertia>
+            <ixx>4.30361e-06</ixx>
+            <ixy>-1.49717e-21</ixy>
+            <ixz>-1.02372e-21</ixz>
+            <iyy>6.12986e-06</iyy>
+            <iyz>0</iyz>
+            <izz>5.6498e-06</izz>
+          </inertia>
+        </inertial>
+        <collision name='L15_collision'>
+          <pose frame=''>0 0 0 0 -0 0</pose>
+          <geometry>
+            <mesh>
+              <scale>1 1 1</scale>
+              <uri>/home/qi/ws_MutiFingerHand/src/mutifingerhand_qi_urdf/meshes/L15.STL</uri>
+            </mesh>
+          </geometry>
+          <max_contacts>10</max_contacts>
+          <surface>
+            <contact>
+              <ode/>
+            </contact>
+            <bounce/>
+            <friction>
+              <torsional>
+                <ode/>
+              </torsional>
+              <ode/>
+            </friction>
+          </surface>
+        </collision>
+        <visual name='L15_visual'>
+          <pose frame=''>0 0 0 0 -0 0</pose>
+          <geometry>
+            <mesh>
+              <scale>1 1 1</scale>
+              <uri>/home/qi/ws_MutiFingerHand/src/mutifingerhand_qi_urdf/meshes/L15.STL</uri>
+            </mesh>
+          </geometry>
+        </visual>
+        <self_collide>0</self_collide>
+        <enable_wind>0</enable_wind>
+        <kinematic>0</kinematic>
+      </link>
+      <joint name='J15' type='revolute'>
+        <child>L15</child>
+        <parent>L14</parent>
+        <axis>
+          <xyz>-4e-06 -1 0</xyz>
+          <limit>
+            <lower>0</lower>
+            <upper>1.5708</upper>
+            <effort>10</effort>
+            <velocity>0.2</velocity>
+          </limit>
+          <dynamics>
+            <spring_reference>0</spring_reference>
+            <spring_stiffness>0</spring_stiffness>
+          </dynamics>
+          <use_parent_model_frame>1</use_parent_model_frame>
+        </axis>
+      </joint>
+      <link name='L21'>
+        <pose frame=''>-0.012217 -0.021161 0.36 -2.09439 -1.57079 3.14159</pose>
+        <inertial>
+          <pose frame=''>-0 -0 -0 0 -0 0</pose>
+          <mass>0.00533033</mass>
+          <inertia>
+            <ixx>3.90144e-07</ixx>
+            <ixy>-1.02097e-11</ixy>
+            <ixz>1.02097e-11</ixz>
+            <iyy>4.31614e-07</iyy>
+            <iyz>1.1279e-16</iyz>
+            <izz>4.31614e-07</izz>
+          </inertia>
+        </inertial>
+        <collision name='L21_collision'>
+          <pose frame=''>0 0 0 0 -0 0</pose>
+          <geometry>
+            <mesh>
+              <scale>1 1 1</scale>
+              <uri>/home/qi/ws_MutiFingerHand/src/mutifingerhand_qi_urdf/meshes/L21.STL</uri>
+            </mesh>
+          </geometry>
+          <max_contacts>10</max_contacts>
+          <surface>
+            <contact>
+              <ode/>
+            </contact>
+            <bounce/>
+            <friction>
+              <torsional>
+                <ode/>
+              </torsional>
+              <ode/>
+            </friction>
+          </surface>
+        </collision>
+        <visual name='L21_visual'>
+          <pose frame=''>0 0 0 0 -0 0</pose>
+          <geometry>
+            <mesh>
+              <scale>1 1 1</scale>
+              <uri>/home/qi/ws_MutiFingerHand/src/mutifingerhand_qi_urdf/meshes/L21.STL</uri>
+            </mesh>
+          </geometry>
+        </visual>
+        <self_collide>0</self_collide>
+        <enable_wind>0</enable_wind>
+        <kinematic>0</kinematic>
+      </link>
+      <joint name='J21' type='revolute'>
+        <child>L21</child>
+        <parent>Plam</parent>
+        <axis>
+          <xyz>0.5 0.866025 0</xyz>
+          <limit>
+            <lower>0</lower>
+            <upper>1.5708</upper>
+            <effort>10</effort>
+            <velocity>0.2</velocity>
+          </limit>
+          <dynamics>
+            <spring_reference>0</spring_reference>
+            <spring_stiffness>0</spring_stiffness>
+          </dynamics>
+          <use_parent_model_frame>1</use_parent_model_frame>
+        </axis>
+      </joint>
+      <link name='L22'>
+        <pose frame=''>-0.012217 -0.021161 0.36 2.61799 -1.57079 3.14159</pose>
+        <inertial>
+          <pose frame=''>0.025739 0 0 0 -0 0</pose>
+          <mass>0.0213393</mass>
+          <inertia>
+            <ixx>3.13943e-06</ixx>
+            <ixy>2.54748e-22</ixy>
+            <ixz>-2.78389e-22</ixz>
+            <iyy>3.24391e-06</iyy>
+            <iyz>-2.73034e-22</iyz>
+            <izz>3.32835e-06</izz>
+          </inertia>
+        </inertial>
+        <collision name='L22_collision'>
+          <pose frame=''>0 0 0 0 -0 0</pose>
+          <geometry>
+            <mesh>
+              <scale>1 1 1</scale>
+              <uri>/home/qi/ws_MutiFingerHand/src/mutifingerhand_qi_urdf/meshes/L22.STL</uri>
+            </mesh>
+          </geometry>
+          <max_contacts>10</max_contacts>
+          <surface>
+            <contact>
+              <ode/>
+            </contact>
+            <bounce/>
+            <friction>
+              <torsional>
+                <ode/>
+              </torsional>
+              <ode/>
+            </friction>
+          </surface>
+        </collision>
+        <visual name='L22_visual'>
+          <pose frame=''>0 0 0 0 -0 0</pose>
+          <geometry>
+            <mesh>
+              <scale>1 1 1</scale>
+              <uri>/home/qi/ws_MutiFingerHand/src/mutifingerhand_qi_urdf/meshes/L22.STL</uri>
+            </mesh>
+          </geometry>
+        </visual>
+        <self_collide>0</self_collide>
+        <enable_wind>0</enable_wind>
+        <kinematic>0</kinematic>
+      </link>
+      <joint name='J22' type='revolute'>
+        <child>L22</child>
+        <parent>L21</parent>
+        <axis>
+          <xyz>0.866025 -0.5 0</xyz>
+          <limit>
+            <lower>-0.349066</lower>
+            <upper>0.349066</upper>
+            <effort>10</effort>
+            <velocity>0.2</velocity>
+          </limit>
+          <dynamics>
+            <spring_reference>0</spring_reference>
+            <spring_stiffness>0</spring_stiffness>
+          </dynamics>
+          <use_parent_model_frame>1</use_parent_model_frame>
+        </axis>
+      </joint>
+      <link name='L23'>
+        <pose frame=''>-0.012217 -0.021161 0.41 -2.09439 -1.57079 3.14159</pose>
+        <inertial>
+          <pose frame=''>0.03 0 0 0 -0 0</pose>
+          <mass>0.0432978</mass>
+          <inertia>
+            <ixx>6.10361e-06</ixx>
+            <ixy>1.27609e-22</ixy>
+            <ixz>-4.34709e-21</ixz>
+            <iyy>1.24187e-05</iyy>
+            <iyz>-2.81813e-22</iyz>
+            <izz>1.27607e-05</izz>
+          </inertia>
+        </inertial>
+        <collision name='L23_collision'>
+          <pose frame=''>0 0 0 0 -0 0</pose>
+          <geometry>
+            <mesh>
+              <scale>1 1 1</scale>
+              <uri>/home/qi/ws_MutiFingerHand/src/mutifingerhand_qi_urdf/meshes/L23.STL</uri>
+            </mesh>
+          </geometry>
+          <max_contacts>10</max_contacts>
+          <surface>
+            <contact>
+              <ode/>
+            </contact>
+            <bounce/>
+            <friction>
+              <torsional>
+                <ode/>
+              </torsional>
+              <ode/>
+            </friction>
+          </surface>
+        </collision>
+        <visual name='L23_visual'>
+          <pose frame=''>0 0 0 0 -0 0</pose>
+          <geometry>
+            <mesh>
+              <scale>1 1 1</scale>
+              <uri>/home/qi/ws_MutiFingerHand/src/mutifingerhand_qi_urdf/meshes/L23.STL</uri>
+            </mesh>
+          </geometry>
+        </visual>
+        <self_collide>0</self_collide>
+        <enable_wind>0</enable_wind>
+        <kinematic>0</kinematic>
+      </link>
+      <joint name='J23' type='revolute'>
+        <child>L23</child>
+        <parent>L22</parent>
+        <axis>
+          <xyz>0.5 0.866025 0</xyz>
+          <limit>
+            <lower>0</lower>
+            <upper>1.5708</upper>
+            <effort>10</effort>
+            <velocity>0.2</velocity>
+          </limit>
+          <dynamics>
+            <spring_reference>0</spring_reference>
+            <spring_stiffness>0</spring_stiffness>
+          </dynamics>
+          <use_parent_model_frame>1</use_parent_model_frame>
+        </axis>
+      </joint>
+      <link name='L24'>
+        <pose frame=''>-0.012217 -0.021161 0.47 -2.09439 -1.57079 3.14159</pose>
+        <inertial>
+          <pose frame=''>0.029429 -0 0 0 -0 0</pose>
+          <mass>0.0306024</mass>
+          <inertia>
+            <ixx>4.30361e-06</ixx>
+            <ixy>1.18797e-21</ixy>
+            <ixz>-4.46855e-22</ixz>
+            <iyy>6.12986e-06</iyy>
+            <iyz>1.80428e-22</iyz>
+            <izz>5.6498e-06</izz>
+          </inertia>
+        </inertial>
+        <collision name='L24_collision'>
+          <pose frame=''>0 0 0 0 -0 0</pose>
+          <geometry>
+            <mesh>
+              <scale>1 1 1</scale>
+              <uri>/home/qi/ws_MutiFingerHand/src/mutifingerhand_qi_urdf/meshes/L24.STL</uri>
+            </mesh>
+          </geometry>
+          <max_contacts>10</max_contacts>
+          <surface>
+            <contact>
+              <ode/>
+            </contact>
+            <bounce/>
+            <friction>
+              <torsional>
+                <ode/>
+              </torsional>
+              <ode/>
+            </friction>
+          </surface>
+        </collision>
+        <visual name='L24_visual'>
+          <pose frame=''>0 0 0 0 -0 0</pose>
+          <geometry>
+            <mesh>
+              <scale>1 1 1</scale>
+              <uri>/home/qi/ws_MutiFingerHand/src/mutifingerhand_qi_urdf/meshes/L24.STL</uri>
+            </mesh>
+          </geometry>
+        </visual>
+        <self_collide>0</self_collide>
+        <enable_wind>0</enable_wind>
+        <kinematic>0</kinematic>
+      </link>
+      <joint name='J24' type='revolute'>
+        <child>L24</child>
+        <parent>L23</parent>
+        <axis>
+          <xyz>0.5 0.866025 0</xyz>
+          <limit>
+            <lower>0</lower>
+            <upper>1.5708</upper>
+            <effort>10</effort>
+            <velocity>0.2</velocity>
+          </limit>
+          <dynamics>
+            <spring_reference>0</spring_reference>
+            <spring_stiffness>0</spring_stiffness>
+          </dynamics>
+          <use_parent_model_frame>1</use_parent_model_frame>
+        </axis>
+      </joint>
+      <link name='L31'>
+        <pose frame=''>-0.042217 -0.073122 0.36 -2.09439 -1.57079 -3.14159</pose>
+        <inertial>
+          <pose frame=''>-0 -0 -0 0 -0 0</pose>
+          <mass>0.00533033</mass>
+          <inertia>
+            <ixx>3.90144e-07</ixx>
+            <ixy>-1.02097e-11</ixy>
+            <ixz>1.02097e-11</ixz>
+            <iyy>4.31614e-07</iyy>
+            <iyz>1.1279e-16</iyz>
+            <izz>4.31614e-07</izz>
+          </inertia>
+        </inertial>
+        <collision name='L31_collision'>
+          <pose frame=''>0 0 0 0 -0 0</pose>
+          <geometry>
+            <mesh>
+              <scale>1 1 1</scale>
+              <uri>/home/qi/ws_MutiFingerHand/src/mutifingerhand_qi_urdf/meshes/L31.STL</uri>
+            </mesh>
+          </geometry>
+          <max_contacts>10</max_contacts>
+          <surface>
+            <contact>
+              <ode/>
+            </contact>
+            <bounce/>
+            <friction>
+              <torsional>
+                <ode/>
+              </torsional>
+              <ode/>
+            </friction>
+          </surface>
+        </collision>
+        <visual name='L31_visual'>
+          <pose frame=''>0 0 0 0 -0 0</pose>
+          <geometry>
+            <mesh>
+              <scale>1 1 1</scale>
+              <uri>/home/qi/ws_MutiFingerHand/src/mutifingerhand_qi_urdf/meshes/L31.STL</uri>
+            </mesh>
+          </geometry>
+        </visual>
+        <self_collide>0</self_collide>
+        <enable_wind>0</enable_wind>
+        <kinematic>0</kinematic>
+      </link>
+      <joint name='J31' type='revolute'>
+        <child>L31</child>
+        <parent>Plam</parent>
+        <axis>
+          <xyz>0.499998 0.866027 2e-06</xyz>
+          <limit>
+            <lower>0</lower>
+            <upper>1.5708</upper>
+            <effort>10</effort>
+            <velocity>0.2</velocity>
+          </limit>
+          <dynamics>
+            <spring_reference>0</spring_reference>
+            <spring_stiffness>0</spring_stiffness>
+          </dynamics>
+          <use_parent_model_frame>1</use_parent_model_frame>
+        </axis>
+      </joint>
+      <link name='L32'>
+        <pose frame=''>-0.042217 -0.073122 0.36 2.61799 -1.57079 -3.14159</pose>
+        <inertial>
+          <pose frame=''>0.025739 -3.8e-05 0 0 -0 0</pose>
+          <mass>0.0213393</mass>
+          <inertia>
+            <ixx>3.13943e-06</ixx>
+            <ixy>1.56143e-10</ixy>
+            <ixz>-1.45456e-22</ixz>
+            <iyy>3.24391e-06</iyy>
+            <iyz>1.0008e-23</iyz>
+            <izz>3.32835e-06</izz>
+          </inertia>
+        </inertial>
+        <collision name='L32_collision'>
+          <pose frame=''>0 0 0 0 -0 0</pose>
+          <geometry>
+            <mesh>
+              <scale>1 1 1</scale>
+              <uri>/home/qi/ws_MutiFingerHand/src/mutifingerhand_qi_urdf/meshes/L32.STL</uri>
+            </mesh>
+          </geometry>
+          <max_contacts>10</max_contacts>
+          <surface>
+            <contact>
+              <ode/>
+            </contact>
+            <bounce/>
+            <friction>
+              <torsional>
+                <ode/>
+              </torsional>
+              <ode/>
+            </friction>
+          </surface>
+        </collision>
+        <visual name='L32_visual'>
+          <pose frame=''>0 0 0 0 -0 0</pose>
+          <geometry>
+            <mesh>
+              <scale>1 1 1</scale>
+              <uri>/home/qi/ws_MutiFingerHand/src/mutifingerhand_qi_urdf/meshes/L32.STL</uri>
+            </mesh>
+          </geometry>
+        </visual>
+        <self_collide>0</self_collide>
+        <enable_wind>0</enable_wind>
+        <kinematic>0</kinematic>
+      </link>
+      <joint name='J32' type='revolute'>
+        <child>L32</child>
+        <parent>L31</parent>
+        <axis>
+          <xyz>0.866025 -0.500001 3e-06</xyz>
+          <limit>
+            <lower>-0.349066</lower>
+            <upper>0.349066</upper>
+            <effort>10</effort>
+            <velocity>0.2</velocity>
+          </limit>
+          <dynamics>
+            <spring_reference>0</spring_reference>
+            <spring_stiffness>0</spring_stiffness>
+          </dynamics>
+          <use_parent_model_frame>1</use_parent_model_frame>
+        </axis>
+      </joint>
+      <link name='L33'>
+        <pose frame=''>-0.042255 -0.073187 0.41 -3.13946 -1.5693 -2.09652</pose>
+        <inertial>
+          <pose frame=''>0.03 0 0 0 -0 0</pose>
+          <mass>0.0432978</mass>
+          <inertia>
+            <ixx>6.10361e-06</ixx>
+            <ixy>2.82868e-22</ixy>
+            <ixz>-7.23783e-22</ixz>
+            <iyy>1.24187e-05</iyy>
+            <iyz>1.11804e-22</iyz>
+            <izz>1.27607e-05</izz>
+          </inertia>
+        </inertial>
+        <collision name='L33_collision'>
+          <pose frame=''>0 0 0 0 -0 0</pose>
+          <geometry>
+            <mesh>
+              <scale>1 1 1</scale>
+              <uri>/home/qi/ws_MutiFingerHand/src/mutifingerhand_qi_urdf/meshes/L33.STL</uri>
+            </mesh>
+          </geometry>
+          <max_contacts>10</max_contacts>
+          <surface>
+            <contact>
+              <ode/>
+            </contact>
+            <bounce/>
+            <friction>
+              <torsional>
+                <ode/>
+              </torsional>
+              <ode/>
+            </friction>
+          </surface>
+        </collision>
+        <visual name='L33_visual'>
+          <pose frame=''>0 0 0 0 -0 0</pose>
+          <geometry>
+            <mesh>
+              <scale>1 1 1</scale>
+              <uri>/home/qi/ws_MutiFingerHand/src/mutifingerhand_qi_urdf/meshes/L33.STL</uri>
+            </mesh>
+          </geometry>
+        </visual>
+        <self_collide>0</self_collide>
+        <enable_wind>0</enable_wind>
+        <kinematic>0</kinematic>
+      </link>
+      <joint name='J33' type='revolute'>
+        <child>L33</child>
+        <parent>L32</parent>
+        <axis>
+          <xyz>0.499997 0.866026 0.001496</xyz>
+          <limit>
+            <lower>0</lower>
+            <upper>1.5708</upper>
+            <effort>10</effort>
+            <velocity>0.2</velocity>
+          </limit>
+          <dynamics>
+            <spring_reference>0</spring_reference>
+            <spring_stiffness>0</spring_stiffness>
+          </dynamics>
+          <use_parent_model_frame>1</use_parent_model_frame>
+        </axis>
+      </joint>
+      <link name='L34'>
+        <pose frame=''>-0.0423 -0.073264 0.47 -3.13946 -1.5693 -2.09652</pose>
+        <inertial>
+          <pose frame=''>0.029429 -0 0 0 -0 0</pose>
+          <mass>0.0306024</mass>
+          <inertia>
+            <ixx>4.30361e-06</ixx>
+            <ixy>9.66613e-22</ixy>
+            <ixz>6.95659e-22</ixz>
+            <iyy>6.12986e-06</iyy>
+            <iyz>-4.10759e-22</iyz>
+            <izz>5.6498e-06</izz>
+          </inertia>
+        </inertial>
+        <collision name='L34_collision'>
+          <pose frame=''>0 0 0 0 -0 0</pose>
+          <geometry>
+            <mesh>
+              <scale>1 1 1</scale>
+              <uri>/home/qi/ws_MutiFingerHand/src/mutifingerhand_qi_urdf/meshes/L34.STL</uri>
+            </mesh>
+          </geometry>
+          <max_contacts>10</max_contacts>
+          <surface>
+            <contact>
+              <ode/>
+            </contact>
+            <bounce/>
+            <friction>
+              <torsional>
+                <ode/>
+              </torsional>
+              <ode/>
+            </friction>
+          </surface>
+        </collision>
+        <visual name='L34_visual'>
+          <pose frame=''>0 0 0 0 -0 0</pose>
+          <geometry>
+            <mesh>
+              <scale>1 1 1</scale>
+              <uri>/home/qi/ws_MutiFingerHand/src/mutifingerhand_qi_urdf/meshes/L34.STL</uri>
+            </mesh>
+          </geometry>
+        </visual>
+        <self_collide>0</self_collide>
+        <enable_wind>0</enable_wind>
+        <kinematic>0</kinematic>
+      </link>
+      <joint name='J34' type='revolute'>
+        <child>L34</child>
+        <parent>L33</parent>
+        <axis>
+          <xyz>0.499997 0.866026 0.001496</xyz>
+          <limit>
+            <lower>0</lower>
+            <upper>1.5708</upper>
+            <effort>10</effort>
+            <velocity>0.2</velocity>
+          </limit>
+          <dynamics>
+            <spring_reference>0</spring_reference>
+            <spring_stiffness>0</spring_stiffness>
+          </dynamics>
+          <use_parent_model_frame>1</use_parent_model_frame>
+        </axis>
+      </joint>
+      <link name='L41'>
+        <pose frame=''>-0.066029 -0.11437 0.33721 0 -0.87266 -2.0944</pose>
+        <inertial>
+          <pose frame=''>0 -0 -0 0 -0 0</pose>
+          <mass>0.00533033</mass>
+          <inertia>
+            <ixx>3.90144e-07</ixx>
+            <ixy>-1.02097e-11</ixy>
+            <ixz>1.02097e-11</ixz>
+            <iyy>4.31614e-07</iyy>
+            <iyz>1.1279e-16</iyz>
+            <izz>4.31614e-07</izz>
+          </inertia>
+        </inertial>
+        <collision name='L41_collision'>
+          <pose frame=''>0 0 0 0 -0 0</pose>
+          <geometry>
+            <mesh>
+              <scale>1 1 1</scale>
+              <uri>/home/qi/ws_MutiFingerHand/src/mutifingerhand_qi_urdf/meshes/L41.STL</uri>
+            </mesh>
+          </geometry>
+          <max_contacts>10</max_contacts>
+          <surface>
+            <contact>
+              <ode/>
+            </contact>
+            <bounce/>
+            <friction>
+              <torsional>
+                <ode/>
+              </torsional>
+              <ode/>
+            </friction>
+          </surface>
+        </collision>
+        <visual name='L41_visual'>
+          <pose frame=''>0 0 0 0 -0 0</pose>
+          <geometry>
+            <mesh>
+              <scale>1 1 1</scale>
+              <uri>/home/qi/ws_MutiFingerHand/src/mutifingerhand_qi_urdf/meshes/L41.STL</uri>
+            </mesh>
+          </geometry>
+        </visual>
+        <self_collide>0</self_collide>
+        <enable_wind>0</enable_wind>
+        <kinematic>0</kinematic>
+      </link>
+      <joint name='J41' type='revolute'>
+        <child>L41</child>
+        <parent>Plam</parent>
+        <axis>
+          <xyz>0.383024 0.663409 0.642791</xyz>
+          <limit>
+            <lower>0</lower>
+            <upper>1.5708</upper>
+            <effort>10</effort>
+            <velocity>0.2</velocity>
+          </limit>
+          <dynamics>
+            <spring_reference>0</spring_reference>
+            <spring_stiffness>0</spring_stiffness>
+          </dynamics>
+          <use_parent_model_frame>1</use_parent_model_frame>
+        </axis>
+      </joint>
+      <link name='L42'>
+        <pose frame=''>-0.066029 -0.11437 0.33721 -1.5708 -0.87266 -2.0944</pose>
+        <inertial>
+          <pose frame=''>0.025739 0 0 0 -0 0</pose>
+          <mass>0.0213393</mass>
+          <inertia>
+            <ixx>3.13943e-06</ixx>
+            <ixy>7.41154e-22</ixy>
+            <ixz>-4.85734e-22</ixz>
+            <iyy>3.24391e-06</iyy>
+            <iyz>-3.46445e-22</iyz>
+            <izz>3.32835e-06</izz>
+          </inertia>
+        </inertial>
+        <collision name='L42_collision'>
+          <pose frame=''>0 0 0 0 -0 0</pose>
+          <geometry>
+            <mesh>
+              <scale>1 1 1</scale>
+              <uri>/home/qi/ws_MutiFingerHand/src/mutifingerhand_qi_urdf/meshes/L42.STL</uri>
+            </mesh>
+          </geometry>
+          <max_contacts>10</max_contacts>
+          <surface>
+            <contact>
+              <ode/>
+            </contact>
+            <bounce/>
+            <friction>
+              <torsional>
+                <ode/>
+              </torsional>
+              <ode/>
+            </friction>
+          </surface>
+        </collision>
+        <visual name='L42_visual'>
+          <pose frame=''>0 0 0 0 -0 0</pose>
+          <geometry>
+            <mesh>
+              <scale>1 1 1</scale>
+              <uri>/home/qi/ws_MutiFingerHand/src/mutifingerhand_qi_urdf/meshes/L42.STL</uri>
+            </mesh>
+          </geometry>
+        </visual>
+        <self_collide>0</self_collide>
+        <enable_wind>0</enable_wind>
+        <kinematic>0</kinematic>
+      </link>
+      <joint name='J42' type='revolute'>
+        <child>L42</child>
+        <parent>L41</parent>
+        <axis>
+          <xyz>0.866023 -0.500004 -0</xyz>
+          <limit>
+            <lower>-0.349066</lower>
+            <upper>0.349066</upper>
+            <effort>10</effort>
+            <velocity>0.2</velocity>
+          </limit>
+          <dynamics>
+            <spring_reference>0</spring_reference>
+            <spring_stiffness>0</spring_stiffness>
+          </dynamics>
+          <use_parent_model_frame>1</use_parent_model_frame>
+        </axis>
+      </joint>
+      <link name='L43'>
+        <pose frame=''>-0.082099 -0.142204 0.375512 4e-06 -0.87266 -2.0944</pose>
+        <inertial>
+          <pose frame=''>0.03 0 0 0 -0 0</pose>
+          <mass>0.0432978</mass>
+          <inertia>
+            <ixx>6.10361e-06</ixx>
+            <ixy>-4.44324e-22</ixy>
+            <ixz>-4.23516e-22</ixz>
+            <iyy>1.24187e-05</iyy>
+            <iyz>-8.9068e-22</iyz>
+            <izz>1.27607e-05</izz>
+          </inertia>
+        </inertial>
+        <collision name='L43_collision'>
+          <pose frame=''>0 0 0 0 -0 0</pose>
+          <geometry>
+            <mesh>
+              <scale>1 1 1</scale>
+              <uri>/home/qi/ws_MutiFingerHand/src/mutifingerhand_qi_urdf/meshes/L43.STL</uri>
+            </mesh>
+          </geometry>
+          <max_contacts>10</max_contacts>
+          <surface>
+            <contact>
+              <ode/>
+            </contact>
+            <bounce/>
+            <friction>
+              <torsional>
+                <ode/>
+              </torsional>
+              <ode/>
+            </friction>
+          </surface>
+        </collision>
+        <visual name='L43_visual'>
+          <pose frame=''>0 0 0 0 -0 0</pose>
+          <geometry>
+            <mesh>
+              <scale>1 1 1</scale>
+              <uri>/home/qi/ws_MutiFingerHand/src/mutifingerhand_qi_urdf/meshes/L43.STL</uri>
+            </mesh>
+          </geometry>
+        </visual>
+        <self_collide>0</self_collide>
+        <enable_wind>0</enable_wind>
+        <kinematic>0</kinematic>
+      </link>
+      <joint name='J43' type='revolute'>
+        <child>L43</child>
+        <parent>L42</parent>
+        <axis>
+          <xyz>0.383021 0.663411 0.642791</xyz>
+          <limit>
+            <lower>0</lower>
+            <upper>1.5708</upper>
+            <effort>10</effort>
+            <velocity>0.2</velocity>
+          </limit>
+          <dynamics>
+            <spring_reference>0</spring_reference>
+            <spring_stiffness>0</spring_stiffness>
+          </dynamics>
+          <use_parent_model_frame>1</use_parent_model_frame>
+        </axis>
+      </joint>
+      <link name='L44'>
+        <pose frame=''>-0.101383 -0.175604 0.421475 4e-06 -0.87266 -2.0944</pose>
+        <inertial>
+          <pose frame=''>0.029429 -0 0 0 -0 0</pose>
+          <mass>0.0306024</mass>
+          <inertia>
+            <ixx>4.30361e-06</ixx>
+            <ixy>1.42779e-21</ixy>
+            <ixz>-8.47033e-22</ixz>
+            <iyy>6.12986e-06</iyy>
+            <iyz>1.66266e-22</iyz>
+            <izz>5.6498e-06</izz>
+          </inertia>
+        </inertial>
+        <collision name='L44_collision'>
+          <pose frame=''>0 0 0 0 -0 0</pose>
+          <geometry>
+            <mesh>
+              <scale>1 1 1</scale>
+              <uri>/home/qi/ws_MutiFingerHand/src/mutifingerhand_qi_urdf/meshes/L44.STL</uri>
+            </mesh>
+          </geometry>
+          <max_contacts>10</max_contacts>
+          <surface>
+            <contact>
+              <ode/>
+            </contact>
+            <bounce/>
+            <friction>
+              <torsional>
+                <ode/>
+              </torsional>
+              <ode/>
+            </friction>
+          </surface>
+        </collision>
+        <visual name='L44_visual'>
+          <pose frame=''>0 0 0 0 -0 0</pose>
+          <geometry>
+            <mesh>
+              <scale>1 1 1</scale>
+              <uri>/home/qi/ws_MutiFingerHand/src/mutifingerhand_qi_urdf/meshes/L44.STL</uri>
+            </mesh>
+          </geometry>
+        </visual>
+        <self_collide>0</self_collide>
+        <enable_wind>0</enable_wind>
+        <kinematic>0</kinematic>
+      </link>
+      <joint name='J44' type='revolute'>
+        <child>L44</child>
+        <parent>L43</parent>
+        <axis>
+          <xyz>0.383021 0.663411 0.642791</xyz>
+          <limit>
+            <lower>0</lower>
+            <upper>1.5708</upper>
+            <effort>10</effort>
+            <velocity>0.2</velocity>
+          </limit>
+          <dynamics>
+            <spring_reference>0</spring_reference>
+            <spring_stiffness>0</spring_stiffness>
+          </dynamics>
+          <use_parent_model_frame>1</use_parent_model_frame>
+        </axis>
+      </joint>
+      <link name='L51'>
+        <pose frame=''>-0.08901 -0.15417 0.29864 0 -0.872665 -2.0944</pose>
+        <inertial>
+          <pose frame=''>0 -0 -0 0 -0 0</pose>
+          <mass>0.00533033</mass>
+          <inertia>
+            <ixx>3.90144e-07</ixx>
+            <ixy>-1.02097e-11</ixy>
+            <ixz>1.02097e-11</ixz>
+            <iyy>4.31614e-07</iyy>
+            <iyz>1.1279e-16</iyz>
+            <izz>4.31614e-07</izz>
+          </inertia>
+        </inertial>
+        <collision name='L51_collision'>
+          <pose frame=''>0 0 0 0 -0 0</pose>
+          <geometry>
+            <mesh>
+              <scale>1 1 1</scale>
+              <uri>/home/qi/ws_MutiFingerHand/src/mutifingerhand_qi_urdf/meshes/L51.STL</uri>
+            </mesh>
+          </geometry>
+          <max_contacts>10</max_contacts>
+          <surface>
+            <contact>
+              <ode/>
+            </contact>
+            <bounce/>
+            <friction>
+              <torsional>
+                <ode/>
+              </torsional>
+              <ode/>
+            </friction>
+          </surface>
+        </collision>
+        <visual name='L51_visual'>
+          <pose frame=''>0 0 0 0 -0 0</pose>
+          <geometry>
+            <mesh>
+              <scale>1 1 1</scale>
+              <uri>/home/qi/ws_MutiFingerHand/src/mutifingerhand_qi_urdf/meshes/L51.STL</uri>
+            </mesh>
+          </geometry>
+        </visual>
+        <self_collide>0</self_collide>
+        <enable_wind>0</enable_wind>
+        <kinematic>0</kinematic>
+      </link>
+      <joint name='J51' type='revolute'>
+        <child>L51</child>
+        <parent>Plam</parent>
+        <axis>
+          <xyz>0.383022 0.663414 0.642788</xyz>
+          <limit>
+            <lower>0</lower>
+            <upper>1.5708</upper>
+            <effort>10</effort>
+            <velocity>0.2</velocity>
+          </limit>
+          <dynamics>
+            <spring_reference>0</spring_reference>
+            <spring_stiffness>0</spring_stiffness>
+          </dynamics>
+          <use_parent_model_frame>1</use_parent_model_frame>
+        </axis>
+      </joint>
+      <link name='L52'>
+        <pose frame=''>-0.08901 -0.15417 0.29864 -1.5708 -0.872665 -2.0944</pose>
+        <inertial>
+          <pose frame=''>0.025739 0 0 0 -0 0</pose>
+          <mass>0.0213393</mass>
+          <inertia>
+            <ixx>3.13943e-06</ixx>
+            <ixy>1.37643e-21</ixy>
+            <ixz>2.88221e-22</ixz>
+            <iyy>3.24391e-06</iyy>
+            <iyz>2.92653e-22</iyz>
+            <izz>3.32835e-06</izz>
+          </inertia>
+        </inertial>
+        <collision name='L52_collision'>
+          <pose frame=''>0 0 0 0 -0 0</pose>
+          <geometry>
+            <mesh>
+              <scale>1 1 1</scale>
+              <uri>/home/qi/ws_MutiFingerHand/src/mutifingerhand_qi_urdf/meshes/L52.STL</uri>
+            </mesh>
+          </geometry>
+          <max_contacts>10</max_contacts>
+          <surface>
+            <contact>
+              <ode/>
+            </contact>
+            <bounce/>
+            <friction>
+              <torsional>
+                <ode/>
+              </torsional>
+              <ode/>
+            </friction>
+          </surface>
+        </collision>
+        <visual name='L52_visual'>
+          <pose frame=''>0 0 0 0 -0 0</pose>
+          <geometry>
+            <mesh>
+              <scale>1 1 1</scale>
+              <uri>/home/qi/ws_MutiFingerHand/src/mutifingerhand_qi_urdf/meshes/L52.STL</uri>
+            </mesh>
+          </geometry>
+        </visual>
+        <self_collide>0</self_collide>
+        <enable_wind>0</enable_wind>
+        <kinematic>0</kinematic>
+      </link>
+      <joint name='J52' type='revolute'>
+        <child>L52</child>
+        <parent>L51</parent>
+        <axis>
+          <xyz>0.866025 -0.5 -0</xyz>
+          <limit>
+            <lower>-0.349066</lower>
+            <upper>0.349066</upper>
+            <effort>10</effort>
+            <velocity>0.2</velocity>
+          </limit>
+          <dynamics>
+            <spring_reference>0</spring_reference>
+            <spring_stiffness>0</spring_stiffness>
+          </dynamics>
+          <use_parent_model_frame>1</use_parent_model_frame>
+        </axis>
+      </joint>
+      <link name='L53'>
+        <pose frame=''>-0.10508 -0.182004 0.336942 0 -0.872665 -2.0944</pose>
+        <inertial>
+          <pose frame=''>0.03 0 0 0 -0 0</pose>
+          <mass>0.0432978</mass>
+          <inertia>
+            <ixx>6.10361e-06</ixx>
+            <ixy>4.11628e-23</ixy>
+            <ixz>4.23516e-22</ixz>
+            <iyy>1.24187e-05</iyy>
+            <iyz>-5.8454e-22</iyz>
+            <izz>1.27607e-05</izz>
+          </inertia>
+        </inertial>
+        <collision name='L53_collision'>
+          <pose frame=''>0 0 0 0 -0 0</pose>
+          <geometry>
+            <mesh>
+              <scale>1 1 1</scale>
+              <uri>/home/qi/ws_MutiFingerHand/src/mutifingerhand_qi_urdf/meshes/L53.STL</uri>
+            </mesh>
+          </geometry>
+          <max_contacts>10</max_contacts>
+          <surface>
+            <contact>
+              <ode/>
+            </contact>
+            <bounce/>
+            <friction>
+              <torsional>
+                <ode/>
+              </torsional>
+              <ode/>
+            </friction>
+          </surface>
+        </collision>
+        <visual name='L53_visual'>
+          <pose frame=''>0 0 0 0 -0 0</pose>
+          <geometry>
+            <mesh>
+              <scale>1 1 1</scale>
+              <uri>/home/qi/ws_MutiFingerHand/src/mutifingerhand_qi_urdf/meshes/L53.STL</uri>
+            </mesh>
+          </geometry>
+        </visual>
+        <self_collide>0</self_collide>
+        <enable_wind>0</enable_wind>
+        <kinematic>0</kinematic>
+      </link>
+      <joint name='J53' type='revolute'>
+        <child>L53</child>
+        <parent>L52</parent>
+        <axis>
+          <xyz>0.383022 0.663414 0.642788</xyz>
+          <limit>
+            <lower>0</lower>
+            <upper>1.5708</upper>
+            <effort>10</effort>
+            <velocity>0.2</velocity>
+          </limit>
+          <dynamics>
+            <spring_reference>0</spring_reference>
+            <spring_stiffness>0</spring_stiffness>
+          </dynamics>
+          <use_parent_model_frame>1</use_parent_model_frame>
+        </axis>
+      </joint>
+      <link name='L54'>
+        <pose frame=''>-0.124363 -0.215404 0.382905 0 -0.872665 -2.0944</pose>
+        <inertial>
+          <pose frame=''>0.029429 -0 0 0 -0 0</pose>
+          <mass>0.0306024</mass>
+          <inertia>
+            <ixx>4.30361e-06</ixx>
+            <ixy>2.23528e-21</ixy>
+            <ixz>-8.47033e-22</ixz>
+            <iyy>6.12986e-06</iyy>
+            <iyz>7.0683e-23</iyz>
+            <izz>5.6498e-06</izz>
+          </inertia>
+        </inertial>
+        <collision name='L54_collision'>
+          <pose frame=''>0 0 0 0 -0 0</pose>
+          <geometry>
+            <mesh>
+              <scale>1 1 1</scale>
+              <uri>/home/qi/ws_MutiFingerHand/src/mutifingerhand_qi_urdf/meshes/L54.STL</uri>
+            </mesh>
+          </geometry>
+          <max_contacts>10</max_contacts>
+          <surface>
+            <contact>
+              <ode/>
+            </contact>
+            <bounce/>
+            <friction>
+              <torsional>
+                <ode/>
+              </torsional>
+              <ode/>
+            </friction>
+          </surface>
+        </collision>
+        <visual name='L54_visual'>
+          <pose frame=''>0 0 0 0 -0 0</pose>
+          <geometry>
+            <mesh>
+              <scale>1 1 1</scale>
+              <uri>/home/qi/ws_MutiFingerHand/src/mutifingerhand_qi_urdf/meshes/L54.STL</uri>
+            </mesh>
+          </geometry>
+        </visual>
+        <self_collide>0</self_collide>
+        <enable_wind>0</enable_wind>
+        <kinematic>0</kinematic>
+      </link>
+      <joint name='J54' type='revolute'>
+        <child>L54</child>
+        <parent>L53</parent>
+        <axis>
+          <xyz>0.383022 0.663414 0.642788</xyz>
+          <limit>
+            <lower>0</lower>
+            <upper>1.5708</upper>
+            <effort>10</effort>
+            <velocity>0.2</velocity>
+          </limit>
+          <dynamics>
+            <spring_reference>0</spring_reference>
+            <spring_stiffness>0</spring_stiffness>
+          </dynamics>
+          <use_parent_model_frame>1</use_parent_model_frame>
+        </axis>
+      </joint>
+      <static>0</static>
+      <plugin name='gazebo_ros_control' filename='libgazebo_ros_control.so'>
+        <robotNamespace>/mutifingerhand</robotNamespace>
+      </plugin>
+      <pose frame=''>0 0 0 0 -0 0</pose>
+    </model>
+    <model name='wall'>
+      <link name='link'>
+        <inertial>
+          <mass>1</mass>
+          <inertia>
+            <ixx>0.166667</ixx>
+            <ixy>0</ixy>
+            <ixz>0</ixz>
+            <iyy>0.166667</iyy>
+            <iyz>0</iyz>
+            <izz>0.166667</izz>
+          </inertia>
+          <pose frame=''>0 0 0 0 -0 0</pose>
+        </inertial>
+        <self_collide>0</self_collide>
+        <enable_wind>0</enable_wind>
+        <kinematic>0</kinematic>
+        <pose frame=''>0 0 0 0 -0 0</pose>
+        <gravity>1</gravity>
+        <visual name='visual'>
+          <geometry>
+            <box>
+              <size>5 0.2 2</size>
+            </box>
+          </geometry>
+          <material>
+            <script>
+              <name>Gazebo/Grey</name>
+              <uri>file://media/materials/scripts/gazebo.material</uri>
+            </script>
+            <shader type='vertex'>
+              <normal_map>__default__</normal_map>
+            </shader>
+            <ambient>0.3 0.3 0.3 1</ambient>
+            <diffuse>0.7 0.7 0.7 1</diffuse>
+            <specular>0.01 0.01 0.01 1</specular>
+            <emissive>0 0 0 1</emissive>
+          </material>
+          <pose frame=''>0 0 0 0 -0 0</pose>
+          <transparency>0</transparency>
+          <cast_shadows>1</cast_shadows>
+        </visual>
+        <collision name='collision'>
+          <laser_retro>0</laser_retro>
+          <max_contacts>10</max_contacts>
+          <pose frame=''>0 0 0 0 -0 0</pose>
+          <geometry>
+            <box>
+              <size>1 1 1</size>
+            </box>
+          </geometry>
+          <surface>
+            <friction>
+              <ode>
+                <mu>1</mu>
+                <mu2>1</mu2>
+                <fdir1>0 0 0</fdir1>
+                <slip1>0</slip1>
+                <slip2>0</slip2>
+              </ode>
+              <torsional>
+                <coefficient>1</coefficient>
+                <patch_radius>0</patch_radius>
+                <surface_radius>0</surface_radius>
+                <use_patch_radius>1</use_patch_radius>
+                <ode>
+                  <slip>0</slip>
+                </ode>
+              </torsional>
+            </friction>
+            <bounce>
+              <restitution_coefficient>0</restitution_coefficient>
+              <threshold>1e+06</threshold>
+            </bounce>
+            <contact>
+              <collide_without_contact>0</collide_without_contact>
+              <collide_without_contact_bitmask>1</collide_without_contact_bitmask>
+              <collide_bitmask>1</collide_bitmask>
+              <ode>
+                <soft_cfm>0</soft_cfm>
+                <soft_erp>0.2</soft_erp>
+                <kp>1e+13</kp>
+                <kd>1</kd>
+                <max_vel>0.01</max_vel>
+                <min_depth>0</min_depth>
+              </ode>
+              <bullet>
+                <split_impulse>1</split_impulse>
+                <split_impulse_penetration_threshold>-0.01</split_impulse_penetration_threshold>
+                <soft_cfm>0</soft_cfm>
+                <soft_erp>0.2</soft_erp>
+                <kp>1e+13</kp>
+                <kd>1</kd>
+              </bullet>
+            </contact>
+          </surface>
+        </collision>
+      </link>
+      <static>0</static>
+      <allow_auto_disable>1</allow_auto_disable>
+      <pose frame=''>0.146187 2.07501 0 0 -0 0</pose>
+    </model>
+    <state world_name='default'>
+      <sim_time>48 94000000</sim_time>
+      <real_time>54 325162280</real_time>
+      <wall_time>1597644769 161903736</wall_time>
+      <iterations>48094</iterations>
+      <model name='ground_plane'>
+        <pose frame=''>0 0 0 0 -0 0</pose>
+        <scale>1 1 1</scale>
+        <link name='link'>
+          <pose frame=''>0 0 0 0 -0 0</pose>
+          <velocity>0 0 0 0 -0 0</velocity>
+          <acceleration>0 0 0 0 -0 0</acceleration>
+          <wrench>0 0 0 0 -0 0</wrench>
+        </link>
+      </model>
+      <model name='mutifingerhand'>
+        <pose frame=''>-0 0 -0 1e-06 0 3e-06</pose>
+        <scale>1 1 1</scale>
+        <link name='L11'>
+          <pose frame=''>2.9e-05 2e-06 0.200081 -4.2e-05 0.003105 -0.001799</pose>
+          <velocity>-0 0.000466 -0 -0.015726 6e-06 -0.00927</velocity>
+          <acceleration>-0.001184 -0.519602 -0.000971 0.092485 0.060875 -0.519557</acceleration>
+          <wrench>-3e-05 -0.013249 -2.5e-05 0 -0 0</wrench>
+        </link>
+        <link name='L12'>
+          <pose frame=''>0.070014 -0.000124 0.199989 1.5702 -1.54677 -0.001281</pose>
+          <velocity>-2e-06 -0.000202 2e-06 3.14041 1.06536 2.89536</velocity>
+          <acceleration>-0.001461 -0.030534 -0.000143 -2.55752 -0.094073 1.02904</acceleration>
+          <wrench>-8e-06 -0.000163 -1e-06 0 -0 0</wrench>
+        </link>
+        <link name='L13'>
+          <pose frame=''>0.070085 -0.000124 0.200019 -1.37238 -1.55811 1.37052</pose>
+          <velocity>0.000591 5.3e-05 0.004157 -3.13721 1.06535 2.9466</velocity>
+          <acceleration>-0.002449 0.257878 -0.000942 -1.07371 -0.666945 1.45494</acceleration>
+          <wrench>-5.2e-05 0.005503 -2e-05 0 -0 0</wrench>
+        </link>
+        <link name='L14'>
+          <pose frame=''>0.069955 0.000499 0.250046 0.173406 -1.55817 1.39554</pose>
+          <velocity>1.04742 -3e-06 0.018551 -3.13729 1.38735 2.94916</velocity>
+          <acceleration>-0.001144 0.17472 0.000967 -0.294074 1.06987 -0.384278</acceleration>
+          <wrench>-5e-05 0.007565 4.2e-05 0 -0 0</wrench>
+        </link>
+        <link name='L15'>
+          <pose frame=''>0.07009 0.001246 0.310103 0.164338 -1.55819 1.40461</pose>
+          <velocity>2.28486 -0.000163 0.028345 -3.13721 1.50309 2.94939</velocity>
+          <acceleration>0.001805 -0.076197 0.003517 3.10064 -0.82099 1.49965</acceleration>
+          <wrench>5.5e-05 -0.002332 0.000108 0 -0 0</wrench>
+        </link>
+        <link name='L21'>
+          <pose frame=''>-0.012209 -0.021165 0.360018 1.57064 -0.873391 -0.523562</pose>
+          <velocity>3e-06 6e-06 -1e-06 1.84817 -0.898026 -3.13976</velocity>
+          <acceleration>0.006228 0.011497 -0.001379 0.08171 -1.1647 0.346255</acceleration>
+          <wrench>3.3e-05 6.1e-05 -7e-06 0 -0 0</wrench>
+        </link>
+        <link name='L22'>
+          <pose frame=''>-0.012204 -0.021166 0.360018 -0.001769 -0.87099 -0.521435</pose>
+          <velocity>5.1e-05 -1.7e-05 7.9e-05 1.85305 -0.895205 3.13807</velocity>
+          <acceleration>-0.002169 0.00132 -0.001918 2.70333 -1.55433 2.6093</acceleration>
+          <wrench>-4.6e-05 2.8e-05 -4.1e-05 0 -0 0</wrench>
+        </link>
+        <link name='L23'>
+          <pose frame=''>0.015757 -0.037227 0.398241 1.56946 -0.570941 -0.522057</pose>
+          <velocity>-0.08575 0.049074 0.0837 1.8779 -0.938219 3.13804</velocity>
+          <acceleration>-0.003492 0.001726 -0.002053 -2.18063 -0.148985 0.288045</acceleration>
+          <wrench>-0.000151 7.5e-05 -8.9e-05 0 -0 0</wrench>
+        </link>
+        <link name='L24'>
+          <pose frame=''>0.059521 -0.062404 0.430667 1.56946 -0.570921 -0.522053</pose>
+          <velocity>-0.157148 0.089816 0.212046 1.8884 -0.956392 3.13805</velocity>
+          <acceleration>0.006915 0.017269 -0.002965 0.480915 0.146974 3.00605</acceleration>
+          <wrench>0.000212 0.000528 -9.1e-05 0 -0 0</wrench>
+        </link>
+        <link name='L31'>
+          <pose frame=''>-0.04221 -0.073126 0.360025 1.57066 -1.0736 -0.523568</pose>
+          <velocity>-6e-06 -1e-05 -1e-06 1.74036 -0.718996 3.13952</velocity>
+          <acceleration>-0.011323 -0.01937 -0.000944 -0.171312 1.10954 -1.92255</acceleration>
+          <wrench>-6e-05 -0.000103 -5e-06 0 -0 0</wrench>
+        </link>
+        <link name='L32'>
+          <pose frame=''>-0.042203 -0.073129 0.360023 0.002566 -1.07107 -0.526635</pose>
+          <velocity>3.7e-05 -4.3e-05 0.000107 1.74448 -0.716622 3.13753</velocity>
+          <acceleration>-0.002648 -0.006393 -0.000329 0.279014 1.49943 -0.70996</acceleration>
+          <wrench>-5.7e-05 -0.000136 -7e-06 0 -0 0</wrench>
+        </link>
+        <link name='L33'>
+          <pose frame=''>-0.021481 -0.085262 0.403887 1.57435 -0.77101 -0.527567</pose>
+          <velocity>-0.106275 0.061083 0.06747 1.77274 -0.765514 3.13764</velocity>
+          <acceleration>-0.000917 -0.004937 0.000152 1.29474 0.125997 0.623148</acceleration>
+          <wrench>-4e-05 -0.000214 7e-06 0 -0 0</wrench>
+        </link>
+        <link name='L34'>
+          <pose frame=''>0.015706 -0.106929 0.445701 1.57435 -0.770986 -0.527564</pose>
+          <velocity>-0.205575 0.118091 0.185642 1.78463 -0.786085 3.13766</velocity>
+          <acceleration>-0.009397 -0.016809 0.001452 -3.08623 -1.55947 -1.209</acceleration>
+          <wrench>-0.000288 -0.000514 4.4e-05 0 -0 0</wrench>
+        </link>
+        <link name='L41'>
+          <pose frame=''>-0.066088 -0.114365 0.337235 -0.32114 -0.822229 -1.67199</pose>
+          <velocity>-2.5e-05 -3.2e-05 -5.6e-05 -0.317087 1.32766 1.36706</velocity>
+          <acceleration>-0.049947 -0.064951 -0.11187 -2.74948 0.657786 2.74324</acceleration>
+          <wrench>-0.000266 -0.000346 -0.000596 0 -0 0</wrench>
+        </link>
+        <link name='L42'>
+          <pose frame=''>-0.066147 -0.114375 0.337263 -1.90183 -0.808444 -1.65403</pose>
+          <velocity>-0.000688 -0.001796 0.002042 -0.48155 1.3543 1.42731</velocity>
+          <acceleration>0.018723 0.04002 0.034896 -0.926368 -0.500844 0.561062</acceleration>
+          <wrench>0.0004 0.000854 0.000745 0 -0 0</wrench>
+        </link>
+        <link name='L43'>
+          <pose frame=''>-0.06883 -0.148872 0.373401 -0.331268 -0.808389 -1.65365</pose>
+          <velocity>-0.790538 0.267102 0.21099 -0.378966 1.53254 1.60379</velocity>
+          <acceleration>0.189212 0.214976 0.495198 -1.98211 -1.21957 -0.103045</acceleration>
+          <wrench>0.008192 0.009308 0.021441 0 -0 0</wrench>
+        </link>
+        <link name='L44'>
+          <pose frame=''>-0.072256 -0.190214 0.416828 -0.580475 -0.674448 -1.28763</pose>
+          <velocity>-1.72216 0.58791 0.454341 2.79615 1.55057 -1.48109</velocity>
+          <acceleration>-0.186473 -0.684902 -0.026125 2.991 0.815924 -2.08899</acceleration>
+          <wrench>-0.005707 -0.02096 -0.000799 0 -0 0</wrench>
+        </link>
+        <link name='L51'>
+          <pose frame=''>-0.08901 -0.15417 0.298641 -0.118176 -0.868013 -1.93947</pose>
+          <velocity>1e-06 -0 0 -0.033692 -0.058632 -0.056368</velocity>
+          <acceleration>0.001314 0.001743 -0.001941 0.024887 -0.166395 0.063707</acceleration>
+          <wrench>7e-06 9e-06 -1e-05 0 -0 0</wrench>
+        </link>
+        <link name='L52'>
+          <pose frame=''>-0.089011 -0.154184 0.298626 -1.69169 -0.868538 -1.93718</pose>
+          <velocity>-0 -9e-06 1.1e-05 0.705641 -0.423265 -0.121131</velocity>
+          <acceleration>-0.001132 -0.020319 0.024708 -0.054692 0.33064 -0.113861</acceleration>
+          <wrench>-2.4e-05 -0.000434 0.000527 0 -0 0</wrench>
+        </link>
+        <link name='L53'>
+          <pose frame=''>-0.100581 -0.184341 0.336789 -0.437418 -0.783786 -1.51014</pose>
+          <velocity>-0.01981 -0.025548 -0.026152 0.718368 -0.401229 -0.099895</velocity>
+          <acceleration>-0.001732 -0.04678 0.059985 -0.12866 0.576738 -0.468581</acceleration>
+          <wrench>-7.5e-05 -0.002025 0.002597 0 -0 0</wrench>
+        </link>
+        <link name='L54'>
+          <pose frame=''>-0.098004 -0.226758 0.379145 -0.657356 -0.625798 -1.17355</pose>
+          <velocity>-0.041045 -0.056243 -0.055575 0.719695 -0.398945 -0.097702</velocity>
+          <acceleration>-0.002486 -0.070392 0.091294 -0.175593 0.455986 -0.296032</acceleration>
+          <wrench>-7.6e-05 -0.002154 0.002794 0 -0 0</wrench>
+        </link>
+        <link name='Plam'>
+          <pose frame=''>-0 0 0.2 1e-06 0 3e-06</pose>
+          <velocity>0 -0 0 -2e-06 -1e-06 4e-06</velocity>
+          <acceleration>5.3e-05 -0.000171 9.9e-05 -0.003015 -0.001605 0.007937</acceleration>
+          <wrench>9.2e-05 -0.000297 0.000172 0 -0 0</wrench>
+        </link>
+      </model>
+      <model name='wall'>
+        <pose frame=''>0.146187 2.07501 0.5 0 -0 0</pose>
+        <scale>1 1 1</scale>
+        <link name='link'>
+          <pose frame=''>0.146187 2.07501 0.5 0 -0 0</pose>
+          <velocity>0 0 0 0 -0 0</velocity>
+          <acceleration>0 0 0 -1e-06 1e-06 0</acceleration>
+          <wrench>0 0 0 0 -0 0</wrench>
+        </link>
+      </model>
+      <light name='sun'>
+        <pose frame=''>0 0 10 0 -0 0</pose>
+      </light>
+    </state>
+    <gui fullscreen='0'>
+      <camera name='user_camera'>
+        <pose frame=''>2.71646 -5.43674 2.09609 0 0.247643 1.77219</pose>
+        <view_controller>orbit</view_controller>
+        <projection_type>perspective</projection_type>
+      </camera>
+    </gui>
+  </world>
+</sdf>

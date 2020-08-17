@@ -1,0 +1,8 @@
+prefix=/home/qi/ws_MutiFingerHand/devel
+
+Name: MutiFingerHand_Qi_URDF
+Description: Description of MutiFingerHand_Qi_URDF
+Version: 1.0.0
+Cflags: 
+Libs: -L${prefix}/lib 
+Requires: 

@@ -1,0 +1,89 @@
+mutifingerhand:
+  joint_state_controller:
+    type: joint_state_controller/JointStateController
+    publish_rate: 50
+
+  J11_controller:
+    type: position_controllers/JointPositionController
+    joint: J11
+    pid: {p: 100.0, i: 0.01, d: 1}
+  J12_controller:
+    type: position_controllers/JointPositionController
+    joint: J12
+    pid: {p: 100.0, i: 0.01, d: 1}
+  J13_controller:
+    type: position_controllers/JointPositionController
+    joint: J13
+    pid: {p: 100.0, i: 0.01, d: 1}
+  J14_controller:
+    type: position_controllers/JointPositionController
+    joint: J14
+    pid: {p: 100.0, i: 0.01, d: 1}
+  J15_controller:
+    type: position_controllers/JointPositionController
+    joint: J15
+    pid: {p: 100.0, i: 0.01, d: 1}
+  J21_controller:
+    type: position_controllers/JointPositionController
+    joint: J21
+    pid: {p: 100.0, i: 0.01, d: 1}
+  J22_controller:
+    type: position_controllers/JointPositionController
+    joint: J22
+    pid: {p: 100.0, i: 0.01, d: 1}
+  J23_controller:
+    type: position_controllers/JointPositionController
+    joint: J23
+    pid: {p: 100.0, i: 0.01, d: 1}
+  J24_controller:
+    type: position_controllers/JointPositionController
+    joint: J24
+    pid: {p: 100.0, i: 0.01, d: 1}
+  J31_controller:
+    type: position_controllers/JointPositionController
+    joint: J31
+    pid: {p: 100.0, i: 0.01, d: 1}
+  J32_controller:
+    type: position_controllers/JointPositionController
+    joint: J32
+    pid: {p: 100.0, i: 0.01, d: 1}
+  J33_controller:
+    type: position_controllers/JointPositionController
+    joint: J33
+    pid: {p: 100.0, i: 0.01, d: 1}
+  J34_controller:
+    type: position_controllers/JointPositionController
+    joint: J34
+    pid: {p: 100.0, i: 0.01, d: 1}
+  J41_controller:
+    type: position_controllers/JointPositionController
+    joint: J41
+    pid: {p: 100.0, i: 0.01, d: 1}
+  J42_controller:
+    type: position_controllers/JointPositionController
+    joint: J42
+    pid: {p: 100.0, i: 0.01, d: 1}
+  J43_controller:
+    type: position_controllers/JointPositionController
+    joint: J43
+    pid: {p: 100.0, i: 0.01, d: 1}
+  J44_controller:
+    type: position_controllers/JointPositionController
+    joint: J44
+    pid: {p: 100.0, i: 0.01, d: 1}
+  J51_controller:
+    type: position_controllers/JointPositionController
+    joint: J51
+    pid: {p: 100.0, i: 0.01, d: 1}
+  J52_controller:
+    type: position_controllers/JointPositionController
+    joint: J52
+    pid: {p: 100.0, i: 0.01, d: 1}
+  J53_controller:
+    type: position_controllers/JointPositionController
+    joint: J53
+    pid: {p: 100.0, i: 0.01, d: 1}
+  J54_controller:
+    type: position_controllers/JointPositionController
+    joint: J54
+    pid: {p: 100.0, i: 0.01, d: 1}

@@ -1,0 +1,43 @@
+controller_list:
+  - name: fake_finger1_controller
+    joints:
+      - J11
+      - J12
+      - J13
+      - J14
+      - J15
+  - name: fake_finger2_controller
+    joints:
+      - J21
+      - J22
+      - J23
+      - J24
+  - name: fake_finger3_controller
+    joints:
+      - J31
+      - J32
+      - J33
+      - J34
+  - name: fake_finger4_controller
+    joints:
+      - J41
+      - J42
+      - J43
+      - J44
+  - name: fake_finger5_controller
+    joints:
+      - J51
+      - J52
+      - J53
+      - J54
+initial:  # Define initial robot poses.
+  - group: finger1
+    pose: homefinger1
+  - group: finger2
+    pose: homefinger2
+  - group: finger3
+    pose: homefinger3
+  - group: finger4
+    pose: homefinger4
+  - group: finger5
+    pose: homefinger5

@@ -127,7 +127,7 @@ planner_configs:
     dense_delta_fraction: 0.001  # delta fraction for interface detection. default: 0.001
     max_failures: 5000  # maximum consecutive failure limit. default: 5000
 finger1:
-  default_planner_config: RRTstar
+  default_planner_config: None
   planner_configs:
     - AnytimePathShortening
     - SBL
@@ -156,7 +156,7 @@ finger1:
   projection_evaluator: joints(J11,J12)
   longest_valid_segment_fraction: 0.005
 finger2:
-  default_planner_config: RRTstar
+  default_planner_config: None
   planner_configs:
     - AnytimePathShortening
     - SBL
@@ -185,7 +185,7 @@ finger2:
   projection_evaluator: joints(J21,J22)
   longest_valid_segment_fraction: 0.005
 finger3:
-  default_planner_config: RRTstar
+  default_planner_config: None
   planner_configs:
     - AnytimePathShortening
     - SBL
@@ -214,7 +214,7 @@ finger3:
   projection_evaluator: joints(J31,J32)
   longest_valid_segment_fraction: 0.005
 finger4:
-  default_planner_config: RRTstar
+  default_planner_config: None
   planner_configs:
     - AnytimePathShortening
     - SBL
@@ -243,7 +243,7 @@ finger4:
   projection_evaluator: joints(J41,J42)
   longest_valid_segment_fraction: 0.005
 finger5:
-  default_planner_config: RRTstar
+  default_planner_config: None
   planner_configs:
     - AnytimePathShortening
     - SBL
@@ -271,3 +271,138 @@ finger5:
     - SPARStwo
   projection_evaluator: joints(J51,J52)
   longest_valid_segment_fraction: 0.005
+fingertip1:
+  default_planner_config: None
+  planner_configs:
+    - AnytimePathShortening
+    - SBL
+    - EST
+    - LBKPIECE
+    - BKPIECE
+    - KPIECE
+    - RRT
+    - RRTConnect
+    - RRTstar
+    - TRRT
+    - PRM
+    - PRMstar
+    - FMT
+    - BFMT
+    - PDST
+    - STRIDE
+    - BiTRRT
+    - LBTRRT
+    - BiEST
+    - ProjEST
+    - LazyPRM
+    - LazyPRMstar
+    - SPARS
+    - SPARStwo
+fingertip2:
+  default_planner_config: None
+  planner_configs:
+    - AnytimePathShortening
+    - SBL
+    - EST
+    - LBKPIECE
+    - BKPIECE
+    - KPIECE
+    - RRT
+    - RRTConnect
+    - RRTstar
+    - TRRT
+    - PRM
+    - PRMstar
+    - FMT
+    - BFMT
+    - PDST
+    - STRIDE
+    - BiTRRT
+    - LBTRRT
+    - BiEST
+    - ProjEST
+    - LazyPRM
+    - LazyPRMstar
+    - SPARS
+    - SPARStwo
+fingertip3:
+  default_planner_config: None
+  planner_configs:
+    - AnytimePathShortening
+    - SBL
+    - EST
+    - LBKPIECE
+    - BKPIECE
+    - KPIECE
+    - RRT
+    - RRTConnect
+    - RRTstar
+    - TRRT
+    - PRM
+    - PRMstar
+    - FMT
+    - BFMT
+    - PDST
+    - STRIDE
+    - BiTRRT
+    - LBTRRT
+    - BiEST
+    - ProjEST
+    - LazyPRM
+    - LazyPRMstar
+    - SPARS
+    - SPARStwo
+fingertip4:
+  default_planner_config: None
+  planner_configs:
+    - AnytimePathShortening
+    - SBL
+    - EST
+    - LBKPIECE
+    - BKPIECE
+    - KPIECE
+    - RRT
+    - RRTConnect
+    - RRTstar
+    - TRRT
+    - PRM
+    - PRMstar
+    - FMT
+    - BFMT
+    - PDST
+    - STRIDE
+    - BiTRRT
+    - LBTRRT
+    - BiEST
+    - ProjEST
+    - LazyPRM
+    - LazyPRMstar
+    - SPARS
+    - SPARStwo
+fingertip5:
+  default_planner_config: None
+  planner_configs:
+    - AnytimePathShortening
+    - SBL
+    - EST
+    - LBKPIECE
+    - BKPIECE
+    - KPIECE
+    - RRT
+    - RRTConnect
+    - RRTstar
+    - TRRT
+    - PRM
+    - PRMstar
+    - FMT
+    - BFMT
+    - PDST
+    - STRIDE
+    - BiTRRT
+    - LBTRRT
+    - BiEST
+    - ProjEST
+    - LazyPRM
+    - LazyPRMstar
+    - SPARS
+    - SPARStwo

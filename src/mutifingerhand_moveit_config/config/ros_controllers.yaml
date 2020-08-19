@@ -1,7 +1,7 @@
 # Simulation settings for using moveit_sim_controllers
 moveit_sim_hw_interface:
-  joint_model_group: finger1
-  joint_model_group_pose: homefinger1
+  joint_model_group: finger2
+  joint_model_group_pose: homefinger2
 # Settings for ros_control_boilerplate control loop
 generic_hw_control_loop:
   loop_hz: 300
@@ -37,150 +37,217 @@ joint_state_controller:
   type: joint_state_controller/JointStateController
   publish_rate: 50
 controller_list:
-  []
+  - name: finger1_controller
+    action_ns: follow_joint_trajectory
+    type: FollowJointTrajectory
+    default: true
+    joints:
+      - J11
+      - J12
+      - J13
+      - J14
+      - J15
+  - name: finger2_controller
+    action_ns: follow_joint_trajectory
+    type: FollowJointTrajectory
+    default: true
+    joints:
+      - J21
+      - J22
+      - J23
+      - J24
+  - name: finger3_controller
+    action_ns: follow_joint_trajectory
+    type: FollowJointTrajectory
+    default: true
+    joints:
+      - J31
+      - J32
+      - J33
+      - J34
+  - name: finger4_controller
+    action_ns: follow_joint_trajectory
+    type: FollowJointTrajectory
+    default: true
+    joints:
+      - J41
+      - J42
+      - J43
+      - J44
+  - name: finger5_controller
+    action_ns: follow_joint_trajectory
+    type: FollowJointTrajectory
+    default: true
+    joints:
+      - J51
+      - J52
+      - J53
+      - J54
 finger1_controller:
-  type: position_controllers/JointPositionController
+  type: position_controllers/JointTrajectoryController
   joints:
     - J11
     - J12
     - J13
     - J14
     - J15
-  gains:
-    J11:
-      p: 100
-      d: 1
-      i: 1
-      i_clamp: 1
-    J12:
-      p: 100
-      d: 1
-      i: 1
-      i_clamp: 1
-    J13:
-      p: 100
-      d: 1
-      i: 1
-      i_clamp: 1
-    J14:
-      p: 100
-      d: 1
-      i: 1
-      i_clamp: 1
-    J15:
-      p: 100
-      d: 1
-      i: 1
-      i_clamp: 1
+#  gains:
+#    J11:
+#      p: 100
+#      d: 1
+#      i: 0.01
+#      i_clamp: 1
+#    J12:
+#      p: 100
+#      d: 1
+#      i: 0.01
+#      i_clamp: 1
+#    J13:
+#      p: 100
+#      d: 1
+#      i: 0.01
+#      i_clamp: 1
+#    J14:
+#      p: 100
+#      d: 1
+#      i: 0.01
+#      i_clamp: 1
+#    J15:
+#      p: 100
+#      d: 1
+#      i: 0.01
+#      i_clamp: 1
 finger2_controller:
-  type: position_controllers/JointPositionController
+  type: position_controllers/JointTrajectoryController
   joints:
     - J21
     - J22
     - J23
     - J24
-  gains:
-    J21:
-      p: 100
-      d: 1
-      i: 1
-      i_clamp: 1
-    J22:
-      p: 100
-      d: 1
-      i: 1
-      i_clamp: 1
-    J23:
-      p: 100
-      d: 1
-      i: 1
-      i_clamp: 1
-    J24:
-      p: 100
-      d: 1
-      i: 1
-      i_clamp: 1
+#  gains:
+#    J21:
+#      p: 100
+#      d: 1
+#      i: 0.01
+#      i_clamp: 1
+#    J22:
+#      p: 100
+#      d: 1
+#      i: 0.01
+#      i_clamp: 1
+#    J23:
+#      p: 100
+#      d: 1
+#      i: 0.01
+#      i_clamp: 1
+#    J24:
+#      p: 100
+#      d: 1
+#      i: 0.01
+#      i_clamp: 1
 finger3_controller:
-  type: position_controllers/JointPositionController
+  type: position_controllers/JointTrajectoryController
   joints:
     - J31
     - J32
     - J33
     - J34
-  gains:
-    J31:
-      p: 100
-      d: 1
-      i: 1
-      i_clamp: 1
-    J32:
-      p: 100
-      d: 1
-      i: 1
-      i_clamp: 1
-    J33:
-      p: 100
-      d: 1
-      i: 1
-      i_clamp: 1
-    J34:
-      p: 100
-      d: 1
-      i: 1
-      i_clamp: 1
+#  gains:
+#    J31:
+#      p: 100
+#      d: 1
+#      i: 0.01
+#      i_clamp: 1
+#    J32:
+#      p: 100
+#      d: 1
+#      i: 0.01
+#      i_clamp: 1
+#    J33:
+#      p: 100
+#      d: 1
+#      i: 0.01
+#      i_clamp: 1
+#    J34:
+#      p: 100
+#      d: 1
+#      i: 0.01
+#      i_clamp: 1
 finger4_controller:
-  type: position_controllers/JointPositionController
+  type: position_controllers/JointTrajectoryController
   joints:
     - J41
     - J42
     - J43
     - J44
-  gains:
-    J41:
-      p: 100
-      d: 1
-      i: 1
-      i_clamp: 1
-    J42:
-      p: 100
-      d: 1
-      i: 1
-      i_clamp: 1
-    J43:
-      p: 100
-      d: 1
-      i: 1
-      i_clamp: 1
-    J44:
-      p: 100
-      d: 1
-      i: 1
-      i_clamp: 1
+#  gains:
+#    J41:
+#      p: 100
+#      d: 1
+#      i: 0.01
+#      i_clamp: 1
+#    J42:
+#      p: 100
+#      d: 1
+#      i: 0.01
+#      i_clamp: 1
+#    J43:
+#      p: 100
+#      d: 1
+#      i: 0.01
+#      i_clamp: 1
+#    J44:
+#      p: 100
+#      d: 1
+#      i: 0.01
+#      i_clamp: 1
 finger5_controller:
-  type: position_controllers/JointPositionController
+  type: position_controllers/JointTrajectoryController
   joints:
     - J51
     - J52
     - J53
     - J54
-  gains:
-    J51:
-      p: 100
-      d: 1
-      i: 1
-      i_clamp: 1
-    J52:
-      p: 100
-      d: 1
-      i: 1
-      i_clamp: 1
-    J53:
-      p: 100
-      d: 1
-      i: 1
-      i_clamp: 1
-    J54:
-      p: 100
-      d: 1
-      i: 1
-      i_clamp: 1
+#  gains:
+#    J51:
+#      p: 100
+#      d: 1
+#      i: 0.01
+#      i_clamp: 1
+#    J52:
+#      p: 100
+#      d: 1
+#      i: 0.01
+#      i_clamp: 1
+#    J53:
+#      p: 100
+#      d: 1
+#      i: 0.01
+#      i_clamp: 1
+#    J54:
+#      p: 100
+#      d: 1
+#      i: 0.01
+#      i_clamp: 1
+gazebo_ros_control/pid_gains:
+  J11:   {p: 3, i: 0, d: 0}
+  J12:   {p: 3, i: 0, d: 0}
+  J13:   {p: 3, i: 0, d: 0}
+  J14:   {p: 3, i: 0, d: 0}
+  J15:   {p: 3, i: 0, d: 0}
+  J21:   {p: 3, i: 0, d: 0}
+  J22:   {p: 3, i: 0, d: 0}
+  J23:   {p: 3, i: 0, d: 0}
+  J24:   {p: 3, i: 0, d: 0}
+  J31:   {p: 3, i: 0, d: 0}
+  J32:   {p: 3, i: 0, d: 0}
+  J33:   {p: 3, i: 0, d: 0}
+  J34:   {p: 3, i: 0, d: 0}
+  J41:   {p: 3, i: 0.1, d: 0.005}
+  J42:   {p: 3, i: 0.1, d: 0.005}
+  J43:   {p: 3, i: 0.1, d: 0.005}
+  J44:   {p: 3, i: 0.1, d: 0.005}
+  J51:   {p: 3, i: 0.1, d: 0.005}
+  J52:   {p: 3, i: 0.1, d: 0.005}
+  J53:   {p: 3, i: 0.1, d: 0.005}
+  J54:   {p: 3, i: 0.1, d: 0.005}

@@ -1,0 +1,24 @@
+#IncludeRegexLine: ^[ 	]*[#%][ 	]*(include|import)[ 	]*[<"]([^">]+)([">])
+
+#IncludeRegexScan: ^.*$
+
+#IncludeRegexComplain: ^$
+
+#IncludeRegexTransform: 
+
+/home/qi/ws_MutiFingerHand/src/mutifingerhand_moveit_demo/src/moveit_interface_demo.cpp
+moveit/move_group_interface/move_group_interface.h
+-
+moveit/planning_scene_interface/planning_scene_interface.h
+-
+moveit_msgs/DisplayRobotState.h
+-
+moveit_msgs/DisplayTrajectory.h
+-
+moveit_msgs/AttachedCollisionObject.h
+-
+moveit_msgs/CollisionObject.h
+-
+moveit_visual_tools/moveit_visual_tools.h
+-
+

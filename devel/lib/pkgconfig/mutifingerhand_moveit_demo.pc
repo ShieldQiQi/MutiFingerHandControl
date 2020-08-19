@@ -1,0 +1,8 @@
+prefix=/home/qi/ws_MutiFingerHand/devel
+
+Name: mutifingerhand_moveit_demo
+Description: Description of mutifingerhand_moveit_demo
+Version: 0.1.0
+Cflags: -I/usr/include/eigen3
+Libs: -L${prefix}/lib 
+Requires: moveit_core moveit_visual_tools moveit_ros_planning_interface interactive_markers tf2_geometry_msgs

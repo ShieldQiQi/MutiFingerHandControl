@@ -3,7 +3,7 @@
   <name>mutifingerhand_moveit_config</name>
   <version>0.3.0</version>
   <description>
-     An automatically generated package with all the configuration and launch files for using the mutifingerhand_qi_urdf with the MoveIt Motion Planning Framework
+     An automatically generated package with all the configuration and launch files for using the mutifingerhand with the MoveIt Motion Planning Framework
   </description>
   <author email="qi.shield95@foxmail.com">Qi</author>
   <maintainer email="qi.shield95@foxmail.com">Qi</maintainer>

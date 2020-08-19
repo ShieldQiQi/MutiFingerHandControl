@@ -40,6 +40,21 @@
         <joint name="J53" />
         <joint name="J54" />
     </group>
+    <group name="fingertip1">
+        <link name="L15" />
+    </group>
+    <group name="fingertip2">
+        <link name="L24" />
+    </group>
+    <group name="fingertip3">
+        <link name="L34" />
+    </group>
+    <group name="fingertip4">
+        <link name="L44" />
+    </group>
+    <group name="fingertip5">
+        <link name="L54" />
+    </group>
     <!--GROUP STATES: Purpose: Define a named state for a particular group, in terms of joint values. This is useful to define states like 'folded arms'-->
     <group_state name="homefinger1" group="finger1">
         <joint name="J11" value="0" />
@@ -72,8 +87,27 @@
         <joint name="J53" value="0" />
         <joint name="J54" value="0" />
     </group_state>
-    <!--VIRTUAL JOINT: Purpose: this element defines a virtual joint between a robot link and an external frame of reference (considered fixed with respect to the robot)-->
-    <virtual_joint name="virtual_joint" type="fixed" parent_frame="world" child_link="Plam" />
+    <group_state name="homefingertip1" group="fingertip1">
+        <joint name="J15" value="0" />
+    </group_state>
+    <group_state name="homefingertip2" group="fingertip2">
+        <joint name="J24" value="0" />
+    </group_state>
+    <group_state name="homefingertip3" group="fingertip3">
+        <joint name="J34" value="0" />
+    </group_state>
+    <group_state name="homefingertip4" group="fingertip4">
+        <joint name="J44" value="0" />
+    </group_state>
+    <group_state name="homefingertip5" group="fingertip5">
+        <joint name="J54" value="0" />
+    </group_state>
+    <!--END EFFECTOR: Purpose: Represent information about an end effector.-->
+    <end_effector name="ee1" parent_link="L14" group="fingertip1" parent_group="finger1" />
+    <end_effector name="ee2" parent_link="L23" group="fingertip2" parent_group="finger2" />
+    <end_effector name="ee3" parent_link="L33" group="fingertip3" parent_group="finger3" />
+    <end_effector name="ee4" parent_link="L43" group="fingertip4" parent_group="finger4" />
+    <end_effector name="ee5" parent_link="L53" group="fingertip5" parent_group="finger5" />
     <!--DISABLE COLLISIONS: By default it is assumed that any link of the robot could potentially come into collision with any other link in the robot. This tag disables collision checking between a specified pair of links. -->
     <disable_collisions link1="L11" link2="L12" reason="Adjacent" />
     <disable_collisions link1="L11" link2="L13" reason="User" />
@@ -144,9 +178,10 @@
     <disable_collisions link1="L14" link2="L52" reason="Never" />
     <disable_collisions link1="L14" link2="L53" reason="Never" />
     <disable_collisions link1="L14" link2="L54" reason="Never" />
+    <disable_collisions link1="L14" link2="Plam" reason="Always" />
     <disable_collisions link1="L15" link2="L31" reason="Never" />
-    <disable_collisions link1="L15" link2="L32" reason="Never" />
     <disable_collisions link1="L15" link2="L33" reason="Never" />
+    <disable_collisions link1="L15" link2="L34" reason="Never" />
     <disable_collisions link1="L15" link2="L41" reason="Never" />
     <disable_collisions link1="L15" link2="L42" reason="Never" />
     <disable_collisions link1="L15" link2="L43" reason="Never" />

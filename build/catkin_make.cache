@@ -1,2 +1,2 @@
-gazebocontrolsim:mutifingerhand_moveit_config:mutifingerhand_qi_urdf
--DCATKIN_DEVEL_PREFIX=/home/qi/ws_MutiFingerHand/devel -DCMAKE_INSTALL_PREFIX=/home/qi/ws_MutiFingerHand/install -G Unix Makefiles
+gazebocontrolsim:mutifingerhand_moveit_config:mutifingerhand_moveit_demo:mutifingerhand_qi_urdf
+-G CodeBlocks - Unix Makefiles -DCMAKE_BUILD_TYPE=Debug -DCATKIN_DEVEL_PREFIX=/home/qi/ws_MutiFingerHand/devel -DCMAKE_INSTALL_PREFIX=/home/qi/ws_MutiFingerHand/install

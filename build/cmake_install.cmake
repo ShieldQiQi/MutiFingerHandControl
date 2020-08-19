@@ -133,6 +133,7 @@ if(NOT CMAKE_INSTALL_LOCAL_ONLY)
   include("/home/qi/ws_MutiFingerHand/build/gtest/cmake_install.cmake")
   include("/home/qi/ws_MutiFingerHand/build/mutifingerhand_moveit_config/cmake_install.cmake")
   include("/home/qi/ws_MutiFingerHand/build/gazebocontrolsim/cmake_install.cmake")
+  include("/home/qi/ws_MutiFingerHand/build/mutifingerhand_moveit_demo/cmake_install.cmake")
   include("/home/qi/ws_MutiFingerHand/build/mutifingerhand_qi_urdf/cmake_install.cmake")
 
 endif()

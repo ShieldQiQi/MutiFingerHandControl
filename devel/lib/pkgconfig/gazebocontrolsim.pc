@@ -3,6 +3,6 @@ prefix=/home/qi/ws_MutiFingerHand/devel
 Name: gazebocontrolsim
 Description: Description of gazebocontrolsim
 Version: 0.3.0
-Cflags: 
+Cflags: -I/home/qi/ws_MutiFingerHand/src/gazebocontrolsim/include
 Libs: -L${prefix}/lib 
-Requires: 
+Requires: actionlib moveit_msgs control_msgs

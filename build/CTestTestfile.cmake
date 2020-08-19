@@ -7,4 +7,5 @@
 subdirs("gtest")
 subdirs("mutifingerhand_moveit_config")
 subdirs("gazebocontrolsim")
+subdirs("mutifingerhand_moveit_demo")
 subdirs("mutifingerhand_qi_urdf")

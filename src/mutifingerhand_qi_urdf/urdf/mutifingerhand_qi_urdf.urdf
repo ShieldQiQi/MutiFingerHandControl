@@ -4,9 +4,15 @@
      For more information, please see http://wiki.ros.org/sw_urdf_exporter -->
 <robot
   name="mutifingerhand">
+  <link name="world"/>
+  <joint name="virtual_joint" type="fixed">
+      <origin xyz="0 0 0.25" rpy="0 0 0" />
+      <parent link="world"/>
+      <child link="Plam"/>
+  </joint>
   <link
     name="Plam">
-<!--    <inertial>
+    <inertial>
       <origin
         xyz="-0.0258585624172266 -0.0447883427186679 -0.00792482655775652"
         rpy="0 0 0" />
@@ -19,7 +25,7 @@
         iyy="0.0151846344467882"
         iyz="0.000619151483781683"
         izz="0.00547612023214745" />
-    </inertial>-->
+    </inertial>
     <visual>
       <origin
         xyz="0 0 0"
@@ -100,9 +106,9 @@
       lower="-1.5"
       upper="0.4"
       effort="10"
-      velocity="0.2" />
+      velocity="0.6" />
     <safety_controller
-      k_velocity="0.2"
+      k_velocity="0.6"
       k_position="3"
       soft_lower_limit = "-1.5"
       soft_upper_limit = "0.4"/>
@@ -163,9 +169,9 @@
     lower="0"
     upper="1.5707963267949"
     effort="10"
-    velocity="0.2" />
+    velocity="0.6" />
     <safety_controller
-    k_velocity="0.2"
+    k_velocity="0.6"
     k_position="3"
     soft_lower_limit = "0"
     soft_upper_limit = "1.5707963267949"/>
@@ -226,9 +232,9 @@
     lower="-0.34906585039"
     upper="0.34906585039"
     effort="10"
-    velocity="0.2" />
+    velocity="0.6" />
     <safety_controller
-    k_velocity="0.2"
+    k_velocity="0.6"
     k_position="3"
     soft_lower_limit = "-0.34906585039"
     soft_upper_limit = "0.34906585039"/>
@@ -289,9 +295,9 @@
     lower="0"
     upper="1.5707963267949"
     effort="10"
-    velocity="0.2" />
+    velocity="0.6" />
     <safety_controller
-    k_velocity="0.2"
+    k_velocity="0.6"
     k_position="3"
     soft_lower_limit = "0"
     soft_upper_limit = "1.5707963267949"/>
@@ -352,9 +358,9 @@
     lower="0"
     upper="1.5707963267949"
     effort="10"
-    velocity="0.2" />
+    velocity="0.6" />
     <safety_controller
-    k_velocity="0.2"
+    k_velocity="0.6"
     k_position="3"
     soft_lower_limit = "0"
     soft_upper_limit = "1.5707963267949"/>
@@ -415,9 +421,9 @@
     lower="0"
     upper="1.5707963267949"
     effort="10"
-    velocity="0.2" />
+    velocity="0.6" />
     <safety_controller
-    k_velocity="0.2"
+    k_velocity="0.6"
     k_position="3"
     soft_lower_limit = "0"
     soft_upper_limit = "1.5707963267949"/>
@@ -478,9 +484,9 @@
     lower="-0.34906585039"
     upper="0.34906585039"
     effort="10"
-    velocity="0.2" />
+    velocity="0.6" />
     <safety_controller
-    k_velocity="0.2"
+    k_velocity="0.6"
     k_position="3"
     soft_lower_limit = "-0.34906585039"
     soft_upper_limit = "0.34906585039"/>
@@ -541,9 +547,9 @@
     lower="0"
     upper="1.5707963267949"
     effort="10"
-    velocity="0.2" />
+    velocity="0.6" />
     <safety_controller
-    k_velocity="0.2"
+    k_velocity="0.6"
     k_position="3"
     soft_lower_limit = "0"
     soft_upper_limit = "1.5707963267949"/>
@@ -604,9 +610,9 @@
     lower="0"
     upper="1.5707963267949"
     effort="10"
-    velocity="0.2" />
+    velocity="0.6" />
     <safety_controller
-    k_velocity="0.2"
+    k_velocity="0.6"
     k_position="3"
     soft_lower_limit = "0"
     soft_upper_limit = "1.5707963267949"/>
@@ -667,9 +673,9 @@
     lower="0"
     upper="1.5707963267949"
     effort="10"
-    velocity="0.2" />
+    velocity="0.6" />
     <safety_controller
-    k_velocity="0.2"
+    k_velocity="0.6"
     k_position="3"
     soft_lower_limit = "0"
     soft_upper_limit = "1.5707963267949"/>
@@ -730,9 +736,9 @@
         lower="-0.34906585039"
         upper="0.34906585039"
         effort="10"
-        velocity="0.2" />
+        velocity="0.6" />
     <safety_controller
-        k_velocity="0.2"
+        k_velocity="0.6"
         k_position="3"
         soft_lower_limit = "-0.34906585039"
         soft_upper_limit = "0.34906585039"/>
@@ -793,9 +799,9 @@
         lower="0"
         upper="1.5707963267949"
         effort="10"
-        velocity="0.2" />
+        velocity="0.6" />
     <safety_controller
-        k_velocity="0.2"
+        k_velocity="0.6"
         k_position="3"
         soft_lower_limit = "0"
         soft_upper_limit = "1.5707963267949"/>
@@ -856,9 +862,9 @@
         lower="0"
         upper="1.5707963267949"
         effort="10"
-        velocity="0.2" />
+        velocity="0.6" />
       <safety_controller
-        k_velocity="0.2"
+        k_velocity="0.6"
         k_position="3"
         soft_lower_limit = "0"
         soft_upper_limit = "1.5707963267949"/>
@@ -919,9 +925,9 @@
         lower="0"
         upper="1.5707963267949"
         effort="10"
-        velocity="0.2" />
+        velocity="0.6" />
       <safety_controller
-        k_velocity="0.2"
+        k_velocity="0.6"
         k_position="3"
         soft_lower_limit = "0"
         soft_upper_limit = "1.5707963267949"/>
@@ -982,9 +988,9 @@
         lower="-0.34906585039"
         upper="0.34906585039"
         effort="10"
-        velocity="0.2" />
+        velocity="0.6" />
       <safety_controller
-        k_velocity="0.2"
+        k_velocity="0.6"
         k_position="3"
         soft_lower_limit = "-0.34906585039"
         soft_upper_limit = "0.34906585039"/>
@@ -1045,9 +1051,9 @@
         lower="0"
         upper="1.5707963267949"
         effort="10"
-        velocity="0.2" />
+        velocity="0.6" />
       <safety_controller
-        k_velocity="0.2"
+        k_velocity="0.6"
         k_position="3"
         soft_lower_limit = "0"
         soft_upper_limit = "1.5707963267949"/>
@@ -1108,9 +1114,9 @@
         lower="0"
         upper="1.5707963267949"
         effort="10"
-        velocity="0.2" />
+        velocity="0.6" />
       <safety_controller
-        k_velocity="0.2"
+        k_velocity="0.6"
         k_position="3"
         soft_lower_limit = "0"
         soft_upper_limit = "1.5707963267949"/>
@@ -1155,46 +1161,6 @@
       </geometry>
     </collision>
   </link>
-<!--  <link
-    name="L51">
-    <inertial>
-      <origin
-        xyz="0 0 0"
-        rpy="0 0 0" />
-      <mass
-        value="0" />
-      <inertia
-        ixx="0"
-        ixy="0"
-        ixz="0"
-        iyy="0"
-        iyz="0"
-        izz="0" />
-    </inertial>
-    <visual>
-      <origin
-        xyz="0 0 0"
-        rpy="0 0 0" />
-      <geometry>
-        <mesh
-          filename="package://mutifingerhand_qi_urdf/meshes/L51.STL" />
-      </geometry>
-      <material
-        name="">
-        <color
-          rgba="1 1 1 1" />
-      </material>
-    </visual>
-    <collision>
-      <origin
-        xyz="0 0 0"
-        rpy="0 0 0" />
-      <geometry>
-        <mesh
-          filename="package://mutifingerhand_qi_urdf/meshes/L51.STL" />
-      </geometry>
-    </collision>
-  </link>-->
   <joint
     name="J51"
     type="revolute">
@@ -1211,9 +1177,9 @@
         lower="0"
         upper="1.5707963267949"
         effort="10"
-        velocity="0.2" />
+        velocity="0.6" />
       <safety_controller
-        k_velocity="0.2"
+        k_velocity="0.6"
         k_position="3"
         soft_lower_limit = "0"
         soft_upper_limit = "1.5707963267949"/>
@@ -1274,9 +1240,9 @@
         lower="-0.34906585039"
         upper="0.34906585039"
         effort="10"
-        velocity="0.2" />
+        velocity="0.6" />
       <safety_controller
-        k_velocity="0.2"
+        k_velocity="0.6"
         k_position="3"
         soft_lower_limit = "-0.34906585039"
         soft_upper_limit = "0.34906585039"/>
@@ -1337,9 +1303,9 @@
         lower="0"
         upper="1.5707963267949"
         effort="10"
-        velocity="0.2" />
+        velocity="0.6" />
       <safety_controller
-        k_velocity="0.2"
+        k_velocity="0.6"
         k_position="3"
         soft_lower_limit = "0"
         soft_upper_limit = "1.5707963267949"/>
@@ -1400,11 +1366,226 @@
       lower="0"
       upper="1.5707963267949"
       effort="10"
-      velocity="0.2" />
+      velocity="0.6" />
     <safety_controller
-      k_velocity="0.2"
+      k_velocity="0.6"
       k_position="3"
       soft_lower_limit = "0"
       soft_upper_limit = "1.5707963267949"/>
   </joint>
+  <transmission name="trans_J11">
+          <type>transmission_interface/SimpleTransmission</type>
+          <joint name="J11">
+              <hardwareInterface>hardware_interface/PositionJointInterface</hardwareInterface>
+          </joint>
+          <actuator name="J11_motor">
+              <hardwareInterface>hardware_interface/PositionJointInterface</hardwareInterface>
+              <mechanicalReduction>1</mechanicalReduction>
+          </actuator>
+  </transmission>
+  <transmission name="trans_J12">
+          <type>transmission_interface/SimpleTransmission</type>
+          <joint name="J12">
+              <hardwareInterface>hardware_interface/PositionJointInterface</hardwareInterface>
+          </joint>
+          <actuator name="J12_motor">
+              <hardwareInterface>hardware_interface/PositionJointInterface</hardwareInterface>
+              <mechanicalReduction>1</mechanicalReduction>
+          </actuator>
+  </transmission>
+  <transmission name="trans_J13">
+          <type>transmission_interface/SimpleTransmission</type>
+          <joint name="J13">
+              <hardwareInterface>hardware_interface/PositionJointInterface</hardwareInterface>
+          </joint>
+          <actuator name="J13_motor">
+              <hardwareInterface>hardware_interface/PositionJointInterface</hardwareInterface>
+              <mechanicalReduction>1</mechanicalReduction>
+          </actuator>
+  </transmission>
+  <transmission name="trans_J14">
+          <type>transmission_interface/SimpleTransmission</type>
+          <joint name="J14">
+              <hardwareInterface>hardware_interface/PositionJointInterface</hardwareInterface>
+          </joint>
+          <actuator name="J14_motor">
+              <hardwareInterface>hardware_interface/PositionJointInterface</hardwareInterface>
+              <mechanicalReduction>1</mechanicalReduction>
+          </actuator>
+  </transmission>
+  <transmission name="trans_J15">
+          <type>transmission_interface/SimpleTransmission</type>
+          <joint name="J15">
+              <hardwareInterface>hardware_interface/PositionJointInterface</hardwareInterface>
+          </joint>
+          <actuator name="J15_motor">
+              <hardwareInterface>hardware_interface/PositionJointInterface</hardwareInterface>
+              <mechanicalReduction>1</mechanicalReduction>
+          </actuator>
+  </transmission>
+  <transmission name="trans_J21">
+          <type>transmission_interface/SimpleTransmission</type>
+          <joint name="J21">
+              <hardwareInterface>hardware_interface/PositionJointInterface</hardwareInterface>
+          </joint>
+          <actuator name="J21_motor">
+              <hardwareInterface>hardware_interface/PositionJointInterface</hardwareInterface>
+              <mechanicalReduction>1</mechanicalReduction>
+          </actuator>
+  </transmission>
+  <transmission name="trans_J22">
+          <type>transmission_interface/SimpleTransmission</type>
+          <joint name="J22">
+              <hardwareInterface>hardware_interface/PositionJointInterface</hardwareInterface>
+          </joint>
+          <actuator name="J22_motor">
+              <hardwareInterface>hardware_interface/PositionJointInterface</hardwareInterface>
+              <mechanicalReduction>1</mechanicalReduction>
+          </actuator>
+  </transmission>
+  <transmission name="trans_J23">
+          <type>transmission_interface/SimpleTransmission</type>
+          <joint name="J23">
+              <hardwareInterface>hardware_interface/PositionJointInterface</hardwareInterface>
+          </joint>
+          <actuator name="J23_motor">
+              <hardwareInterface>hardware_interface/PositionJointInterface</hardwareInterface>
+              <mechanicalReduction>1</mechanicalReduction>
+          </actuator>
+      </transmission>
+      <transmission name="trans_J24">
+          <type>transmission_interface/SimpleTransmission</type>
+          <joint name="J24">
+              <hardwareInterface>hardware_interface/PositionJointInterface</hardwareInterface>
+          </joint>
+          <actuator name="J24_motor">
+              <hardwareInterface>hardware_interface/PositionJointInterface</hardwareInterface>
+              <mechanicalReduction>1</mechanicalReduction>
+          </actuator>
+      </transmission>
+      <transmission name="trans_J31">
+          <type>transmission_interface/SimpleTransmission</type>
+          <joint name="J31">
+              <hardwareInterface>hardware_interface/PositionJointInterface</hardwareInterface>
+          </joint>
+          <actuator name="J31_motor">
+              <hardwareInterface>hardware_interface/PositionJointInterface</hardwareInterface>
+              <mechanicalReduction>1</mechanicalReduction>
+          </actuator>
+      </transmission>
+      <transmission name="trans_J32">
+          <type>transmission_interface/SimpleTransmission</type>
+          <joint name="J32">
+              <hardwareInterface>hardware_interface/PositionJointInterface</hardwareInterface>
+          </joint>
+          <actuator name="J32_motor">
+              <hardwareInterface>hardware_interface/PositionJointInterface</hardwareInterface>
+              <mechanicalReduction>1</mechanicalReduction>
+          </actuator>
+      </transmission>
+      <transmission name="trans_J33">
+          <type>transmission_interface/SimpleTransmission</type>
+          <joint name="J33">
+              <hardwareInterface>hardware_interface/PositionJointInterface</hardwareInterface>
+          </joint>
+          <actuator name="J33_motor">
+              <hardwareInterface>hardware_interface/PositionJointInterface</hardwareInterface>
+              <mechanicalReduction>1</mechanicalReduction>
+          </actuator>
+      </transmission>
+      <transmission name="trans_J34">
+          <type>transmission_interface/SimpleTransmission</type>
+          <joint name="J34">
+              <hardwareInterface>hardware_interface/PositionJointInterface</hardwareInterface>
+          </joint>
+          <actuator name="J34_motor">
+              <hardwareInterface>hardware_interface/PositionJointInterface</hardwareInterface>
+              <mechanicalReduction>1</mechanicalReduction>
+          </actuator>
+      </transmission>
+      <transmission name="trans_J41">
+          <type>transmission_interface/SimpleTransmission</type>
+          <joint name="J41">
+              <hardwareInterface>hardware_interface/PositionJointInterface</hardwareInterface>
+          </joint>
+          <actuator name="J41_motor">
+              <hardwareInterface>hardware_interface/PositionJointInterface</hardwareInterface>
+              <mechanicalReduction>1</mechanicalReduction>
+          </actuator>
+      </transmission>
+      <transmission name="trans_J42">
+          <type>transmission_interface/SimpleTransmission</type>
+          <joint name="J42">
+              <hardwareInterface>hardware_interface/PositionJointInterface</hardwareInterface>
+          </joint>
+          <actuator name="J42_motor">
+              <hardwareInterface>hardware_interface/PositionJointInterface</hardwareInterface>
+              <mechanicalReduction>1</mechanicalReduction>
+          </actuator>
+      </transmission>
+      <transmission name="trans_J43">
+          <type>transmission_interface/SimpleTransmission</type>
+          <joint name="J43">
+              <hardwareInterface>hardware_interface/PositionJointInterface</hardwareInterface>
+          </joint>
+          <actuator name="J43_motor">
+              <hardwareInterface>hardware_interface/PositionJointInterface</hardwareInterface>
+              <mechanicalReduction>1</mechanicalReduction>
+          </actuator>
+      </transmission>
+      <transmission name="trans_J44">
+          <type>transmission_interface/SimpleTransmission</type>
+          <joint name="J44">
+              <hardwareInterface>hardware_interface/PositionJointInterface</hardwareInterface>
+          </joint>
+          <actuator name="J44_motor">
+              <hardwareInterface>hardware_interface/PositionJointInterface</hardwareInterface>
+              <mechanicalReduction>1</mechanicalReduction>
+          </actuator>
+      </transmission>
+      <transmission name="trans_J51">
+          <type>transmission_interface/SimpleTransmission</type>
+          <joint name="J51">
+              <hardwareInterface>hardware_interface/PositionJointInterface</hardwareInterface>
+          </joint>
+          <actuator name="J51_motor">
+              <hardwareInterface>hardware_interface/PositionJointInterface</hardwareInterface>
+              <mechanicalReduction>1</mechanicalReduction>
+          </actuator>
+      </transmission>
+      <transmission name="trans_J52">
+          <type>transmission_interface/SimpleTransmission</type>
+          <joint name="J52">
+              <hardwareInterface>hardware_interface/PositionJointInterface</hardwareInterface>
+          </joint>
+          <actuator name="J52_motor">
+              <hardwareInterface>hardware_interface/PositionJointInterface</hardwareInterface>
+              <mechanicalReduction>1</mechanicalReduction>
+          </actuator>
+      </transmission>
+      <transmission name="trans_J53">
+          <type>transmission_interface/SimpleTransmission</type>
+          <joint name="J53">
+              <hardwareInterface>hardware_interface/PositionJointInterface</hardwareInterface>
+          </joint>
+          <actuator name="J53_motor">
+              <hardwareInterface>hardware_interface/PositionJointInterface</hardwareInterface>
+              <mechanicalReduction>1</mechanicalReduction>
+          </actuator>
+  </transmission>
+  <transmission name="trans_J54">
+          <type>transmission_interface/SimpleTransmission</type>
+          <joint name="J54">
+              <hardwareInterface>hardware_interface/PositionJointInterface</hardwareInterface>
+          </joint>
+          <actuator name="J54_motor">
+              <hardwareInterface>hardware_interface/PositionJointInterface</hardwareInterface>
+              <mechanicalReduction>1</mechanicalReduction>
+          </actuator>
+  </transmission>
+  <gazebo>
+          <plugin name="gazebo_ros_control" filename="libgazebo_ros_control.so">
+              <robotNamespace>/</robotNamespace>
+          </plugin>
+  </gazebo>
 </robot>

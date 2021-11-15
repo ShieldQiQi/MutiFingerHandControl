@@ -11,8 +11,6 @@ Develop a MutiFingerHand `ROS` pkg which plan with `Moveit!` and simulate with `
 
 Open a terminal, clone the repository, update the dependencies and build the packages
 
-![img](https://files-cdn.cnblogs.com/files/QiQi-Robotics/left.gif)
-
 ## Begin
 
 Open a terminal, and run command below to start
